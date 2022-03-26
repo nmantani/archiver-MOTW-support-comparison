@@ -43,32 +43,40 @@ A question came up: **"What archiver software can propagate MOTW to extracted fi
 
 ## FAQ
 - ### What is Mark of the Web?
-  Please see [Downloads and the Mark-of-the-Web](https://textslashplain.com/2016/04/04/downloads-and-the-mark-of-the-web/) and [Mark-of-the-Web from a red team’s perspective](https://outflank.nl/blog/2020/03/30/mark-of-the-web-from-a-red-teams-perspective/). They are very helpful to understand it.
+  Please see these blog articles:
+  - [Details about the Mark-of-the-Web (MOTW)](https://nolongerset.com/mark-of-the-web-details/)
+  - [Downloads and the Mark-of-the-Web](https://textslashplain.com/2016/04/04/downloads-and-the-mark-of-the-web/)
+  - [Mark-of-the-Web from a red team’s perspective](https://outflank.nl/blog/2020/03/30/mark-of-the-web-from-a-red-teams-perspective/).
+  
+  They are very helpful to understand it.
 
 - ### My favorite archiver software is not listed.
-  Please provide your test result from [Issues](https://github.com/nmantani/archiver-MOTW-support-comparison/issues) or [Pull Request](https://github.com/nmantani/archiver-MOTW-support-comparison/pulls). The comparison table contains some Japanese archiver software that you may not know because I am Japanese.
+  Please provide your test result from [Issues](https://github.com/nmantani/archiver-MOTW-support-comparison/issues) or [Pull Request](https://github.com/nmantani/archiver-MOTW-support-comparison/pulls). Because I am Japanese, the comparison table contains some Japanese archiver software that you may not know.
 
 - ### How to test my favorite archiver software?
   Please see [Details about the Mark-of-the-Web (MOTW)](https://nolongerset.com/mark-of-the-web-details/). It compares behavior of the built-in Windows unzip utility and 7-zip. You can test your favorite archiver software in a  similar fashion.
 
 - ### Information is incorrect or outdated.
-  Please provide the details from [Issues](https://github.com/nmantani/archiver-MOTW-support-comparison/issues) or the fix from [Pull Request](https://github.com/nmantani/archiver-MOTW-support-comparison/pulls). I am willing to fix it.
+  Please provide the details from [Issues](https://github.com/nmantani/archiver-MOTW-support-comparison/issues) or the fix from [Pull Request](https://github.com/nmantani/archiver-MOTW-support-comparison/pulls). I am happy to fix it.
 
-- ### Can a malicious Office document in a disk image file (.iso, .vhd) circumvent blocking?
-  Yes. If the file format of a disk image file does not support NTFS alternate data stream, MOTW is not set for the files in the disk image file. Please see also [Mark-of-the-Web from a red team’s perspective](https://outflank.nl/blog/2020/03/30/mark-of-the-web-from-a-red-teams-perspective/), [The Dangers of VHD and VHDX Files](https://insights.sei.cmu.edu/blog/the-dangers-of-vhd-and-vhdx-files/), and [Subvert Trust Controls: Mark-of-the-Web Bypass](https://attack.mitre.org/techniques/T1553/005/).
+- ### Can a malicious Office document in a disk image file (such as .iso and .vhd) circumvent blocking?
+  Yes. If the file format of a disk image file does not support NTFS alternate data stream, MOTW is not set for the files in the disk image file. Please see also the following:
+  - [Mark-of-the-Web from a red team’s perspective](https://outflank.nl/blog/2020/03/30/mark-of-the-web-from-a-red-teams-perspective/)
+  - [The Dangers of VHD and VHDX Files](https://insights.sei.cmu.edu/blog/the-dangers-of-vhd-and-vhdx-files/)
+  - [Subvert Trust Controls: Mark-of-the-Web Bypass](https://attack.mitre.org/techniques/T1553/005/).
 
 ## References
 - Macros from the internet will be blocked by default in Office  
 https://docs.microsoft.com/en-us/deployoffice/security/internet-macros-blocked
+
+- Details about the Mark-of-the-Web (MOTW)  
+https://nolongerset.com/mark-of-the-web-details/
 
 - Downloads and the Mark-of-the-Web  
 https://textslashplain.com/2016/04/04/downloads-and-the-mark-of-the-web/
 
 - Mark-of-the-Web from a red team’s perspective  
 https://outflank.nl/blog/2020/03/30/mark-of-the-web-from-a-red-teams-perspective/
-
-- Details about the Mark-of-the-Web (MOTW)  
-https://nolongerset.com/mark-of-the-web-details/
 
 - The Dangers of VHD and VHDX Files  
 https://insights.sei.cmu.edu/blog/the-dangers-of-vhd-and-vhdx-files/

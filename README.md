@@ -84,3 +84,5 @@ https://insights.sei.cmu.edu/blog/the-dangers-of-vhd-and-vhdx-files/
 - Subvert Trust Controls: Mark-of-the-Web Bypass  
 https://attack.mitre.org/techniques/T1553/005/
 
+## Author
+Nobutaka Mantani ([@nmantani](https://twitter.com/nmantani))

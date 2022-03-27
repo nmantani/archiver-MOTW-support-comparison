@@ -14,9 +14,9 @@ An excerpt from the announcement:
 
 This is a great improvement of defense against malicious Office document files.
 
-Whether blocking macro or not is determined based on MOTW (Mark of the Web) attribute of the file. Applications such as web browsers and email clients set MOTW to downloaded files and email attachments that come from the internet. MOTW is set as Zone.Identifier NTFS alternate data stream.
+According to the announcement, whether blocking macro or not is determined based on MOTW (Mark of the Web) attribute of the file. Applications such as web browsers and email clients put MOTW on downloaded files and email attachments that come from the internet. MOTW is stored in Zone.Identifier NTFS alternate data stream.
 
-To block macro of malicious Office document files that are extracted from archive files, an archiver software has to propagate MOTW to extracted files when an archive file has MOTW. If an archiver software does not propagate MOTW, malicious Office documents in archive files can circumvent blocking.
+To block macro of malicious Office document files that are extracted from archive files, an archiver software has to propagate MOTW to extracted files when an archive file has MOTW. If archiver software does not propagate MOTW, malicious Office documents in archive files can circumvent blocking.
 
 A question came up: **"What archiver software can propagate MOTW to extracted files?"** So I tested some archiver software and summarized the result.
 

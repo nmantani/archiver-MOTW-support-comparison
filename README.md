@@ -26,8 +26,8 @@ A question came up: **"What archiver software can propagate MOTW to extracted fi
 |"Extract all" built-in function of Windows Explorer|Windows 10 21H2|proprietary|Yes :heavy_check_mark:|
 |[Explzh](https://www.ponsoftware.com/en/)|8.60|proprietary for commercial use|Yes :heavy_check_mark:|
 |[WinZip](https://www.winzip.com/)|26.0 (trial)|proprietary|Yes :heavy_check_mark:|
-|[Ashampoo ZIP Free](https://www.ashampoo.com/en-us/zip-free)|1.0.7|freeware (registration required)|No :x:|
 |[7-Zip](https://www.7-zip.org/)|21.07|GNU LGPL|No :x:|
+|[Ashampoo ZIP Free](https://www.ashampoo.com/en-us/zip-free)|1.0.7|freeware (registration required)|No :x:|
 |[Bandizip](https://en.bandisoft.com/bandizip/)|Standard Edition 7.23|freeware|No :x:|
 |[CAM UnZip](https://www.camunzip.com/)|5.2.1.0|proprietary for commercial use|No :x:|
 |[CubeICE](https://www.cube-soft.jp/cubeice/)|1.1.1|freeware|No :x:|

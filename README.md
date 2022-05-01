@@ -50,7 +50,7 @@ A question came up: **"What archiver software can propagate MOTW to extracted fi
 - .url .reg
 - .docx .doc .xls .xlsx .ppt .pptx .wiz
 
-I tested Bandizip with a ZIP archive file that contained only text files in the past, and I misunderstood that Bandizip does not propagate MOTW.
+I previously tested Bandizip with a ZIP archive file that contained only text files, and I misunderstood that Bandizip does not propagate MOTW.
 
 ## FAQ
 - ### What is MOTW (Mark of the Web)?

@@ -42,7 +42,7 @@ A question came up: **"What archiver software can propagate MOTW to extracted fi
 |[ZipGenious](https://zipgenius.com/)|6.3.2.3116|freeware|No :x:||
 |[Zipware](https://www.zipware.org/)|1.6|freeware|No :x:||
 
-<a id="*1">*1</a>: Accoring to [the document of Bandizip](https://www.bandisoft.com/bandizip/help/zone-identifier/), Bandizip propagates MOTW to the following file extensions:
+<a id="*1">*1</a>: Accoring to [the document of Bandizip](https://www.bandisoft.com/bandizip/help/zone-identifier/), Bandizip propagates MOTW to files with the following file extensions:
 - .exe .com .msi .scr .bat .cmd .pif .bat .lnk
 - .zip .zipx .rar .7z .alz .egg .cab .bh
 - .iso .img .isz .udf .wim .bin .i00

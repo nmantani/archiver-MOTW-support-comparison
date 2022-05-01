@@ -20,26 +20,37 @@ To block macro of malicious Office document files that are extracted from archiv
 
 A question came up: **"What archiver software can propagate MOTW to extracted files?"** So I tested some archiver software and summarized the result.
 
-## Comparison table (as of 27 March 2022)
-|Name|Tested version|License|MOTW propagation|
-|----|-------|-------|----------------|
-|"Extract all" built-in function of Windows Explorer|Windows 10 21H2|proprietary|Yes :heavy_check_mark:|
-|[Explzh](https://www.ponsoftware.com/en/)|8.60|proprietary for commercial use|Yes :heavy_check_mark:|
-|[WinZip](https://www.winzip.com/)|26.0 (trial)|proprietary|Yes :heavy_check_mark:|
-|[7-Zip](https://www.7-zip.org/)|21.07|GNU LGPL|No :x:|
-|[Ashampoo ZIP Free](https://www.ashampoo.com/en-us/zip-free)|1.0.7|freeware (registration required)|No :x:|
-|[Bandizip](https://en.bandisoft.com/bandizip/)|Standard Edition 7.23|freeware|No :x:|
-|[CAM UnZip](https://www.camunzip.com/)|5.2.1.0|proprietary for commercial use|No :x:|
-|[CubeICE](https://www.cube-soft.jp/cubeice/)|1.1.1|freeware|No :x:|
-|[IZArc](https://www.izarc.org/)|4.5|freeware|No :x:|
-|[LhaForge](https://claybird.sakura.ne.jp/garage/lhaforge/index.html)|1.6.7|MIT|No :x:|
-|[Lhaplus](http://hoehoe.com/)|1.74|freeware|No :x:|
-|[PeaZip](https://peazip.github.io/)|8.5.0|GNU LGPL|No :x:|
-|[PowerArchiver](https://www.powerarchiver.com/)|20.10.03 (trial)|proprietary|No :x:|
-|[StuffIt Expander](https://stuffit.com/)|15.0.8|freeware|No :x:|
-|[WinRar](https://www.win-rar.com/)|6.11 (trial)|proprietary|No :x:|
-|[ZipGenious](https://zipgenius.com/)|6.3.2.3116|freeware|No :x:|
-|[Zipware](https://www.zipware.org/)|1.6|freeware|No :x:|
+## Comparison table (as of 1 May 2022)
+|Name|Tested version|License|MOTW propagation|Note|
+|----|--------------|-------|----------------|----|
+|"Extract all" built-in function of Windows Explorer|Windows 10 21H2|proprietary|Yes :heavy_check_mark:||
+|[Bandizip](https://en.bandisoft.com/bandizip/)|Standard Edition 7.25|freeware|Yes :heavy_check_mark:|<a href="#*1">*1</a>|
+|[Explzh](https://www.ponsoftware.com/en/)|8.63|proprietary for commercial use|Yes :heavy_check_mark:||
+|[WinZip](https://www.winzip.com/)|26.0 (trial)|proprietary|Yes :heavy_check_mark:||
+|[7-Zip](https://www.7-zip.org/)|21.07|GNU LGPL|No :x:||
+|[Ashampoo ZIP Free](https://www.ashampoo.com/en-us/zip-free)|1.0.7|freeware (registration required)|No :x:||
+|[CAM UnZip](https://www.camunzip.com/)|5.2.1.0|proprietary for commercial use|No :x:||
+|[CubeICE](https://www.cube-soft.jp/cubeice/)|1.1.1|freeware|No :x:||
+|[IZArc](https://www.izarc.org/)|4.5|freeware|No :x:||
+|[LhaForge](https://claybird.sakura.ne.jp/garage/lhaforge/index.html)|1.6.7|MIT|No :x:||
+|[Lhaplus](http://hoehoe.com/)|1.74|freeware|No :x:||
+|[NanaZip](https://github.com/M2Team/NanaZip)|1.1.194.0|MIT|No :x:||
+|[PeaZip](https://peazip.github.io/)|8.6.0|GNU LGPL|No :x:||
+|[PowerArchiver](https://www.powerarchiver.com/)|21.00.15 (trial)|proprietary|No :x:||
+|[StuffIt Expander](https://stuffit.com/)|15.0.8|freeware|No :x:||
+|[WinRar](https://www.win-rar.com/)|6.11 (trial)|proprietary|No :x:||
+|[ZipGenious](https://zipgenius.com/)|6.3.2.3116|freeware|No :x:||
+|[Zipware](https://www.zipware.org/)|1.6|freeware|No :x:||
+
+<a id="*1">*1</a>: Accoring to [the document of Bandizip](https://www.bandisoft.com/bandizip/help/zone-identifier/), Bandizip propagates MOTW to the following file extensions:
+- .exe .com .msi .scr .bat .cmd .pif .bat .lnk
+- .zip .zipx .rar .7z .alz .egg .cab .bh
+- .iso .img .isz .udf .wim .bin .i00
+- .js .jse .vbs .vbe .wsf
+- .url .reg
+- .docx .doc .xls .xlsx .ppt .pptx .wiz
+
+I tested Bandizip with a ZIP archive file that contains only text files in the past and I misunderstood that Bandizip does not propagate MOTW.
 
 ## FAQ
 - ### What is MOTW (Mark of the Web)?
@@ -47,7 +58,7 @@ A question came up: **"What archiver software can propagate MOTW to extracted fi
   - [Details about the Mark-of-the-Web (MOTW)](https://nolongerset.com/mark-of-the-web-details/) by Mike Wolfe ([@NoLongerSet](https://twitter.com/NoLongerSet))
   - [Downloads and the Mark-of-the-Web](https://textslashplain.com/2016/04/04/downloads-and-the-mark-of-the-web/) by Eric Lawrence ([@ericlaw](https://twitter.com/ericlaw))
   - [Mark-of-the-Web from a red team’s perspective](https://outflank.nl/blog/2020/03/30/mark-of-the-web-from-a-red-teams-perspective/) by Stan Hegt ([@stanhacked](https://twitter.com/stanhacked))
-  
+
   They are very helpful to understand it.
 
 - ### My favorite archiver software is not listed.

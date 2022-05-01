@@ -1,4 +1,4 @@
-# Comparison of MOTW (Mark of the Web) support of archiver software for Windows
+# Comparison of MOTW (Mark of the Web) propagation support of archiver software for Windows
 
 ## Background
 On 3 March 2022, Microsoft [announced](https://docs.microsoft.com/en-us/deployoffice/security/internet-macros-blocked) that the default behavior of Office applications on Windows will be changed to block macros in files from the internet (such as email attachment).

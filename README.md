@@ -20,12 +20,13 @@ To block macro of malicious Office document files that are extracted from archiv
 
 A question came up: **"What archiver software can propagate MOTW to extracted files?"** So I tested some archiver software and summarized the result.
 
-## Comparison table (as of 1 May 2022)
+## Comparison table (as of 3 May 2022)
 |Name|Tested version|License|MOTW propagation|Note|
 |----|--------------|-------|----------------|----|
 |"Extract all" built-in function of Windows Explorer|Windows 10 21H2|proprietary|Yes :heavy_check_mark:||
-|[Bandizip](https://en.bandisoft.com/bandizip/)|Standard Edition 7.25|freeware|Yes :heavy_check_mark:|<a href="#*1">*1</a>|
+|[Bandizip](https://en.bandisoft.com/bandizip/)|Standard Edition 7.25|freeware|Yes :heavy_check_mark:|Only for specific file extensions <a href="#*1">*1</a>|
 |[Explzh](https://www.ponsoftware.com/en/)|8.63|proprietary for commercial use|Yes :heavy_check_mark:||
+|[WinRAR](https://www.win-rar.com/)|6.11 (trial)|proprietary|Yes :heavy_check_mark:|Only for specific file extensions <a href="#*2">*2</a>|
 |[WinZip](https://www.winzip.com/)|26.0 (trial)|proprietary|Yes :heavy_check_mark:||
 |[7-Zip](https://www.7-zip.org/)|21.07|GNU LGPL|No :x:||
 |[Ashampoo ZIP Free](https://www.ashampoo.com/en-us/zip-free)|1.0.7|freeware (registration required)|No :x:||
@@ -38,7 +39,6 @@ A question came up: **"What archiver software can propagate MOTW to extracted fi
 |[PeaZip](https://peazip.github.io/)|8.6.0|GNU LGPL|No :x:||
 |[PowerArchiver](https://www.powerarchiver.com/)|21.00.15 (trial)|proprietary|No :x:||
 |[StuffIt Expander](https://stuffit.com/)|15.0.8|freeware|No :x:||
-|[WinRar](https://www.win-rar.com/)|6.11 (trial)|proprietary|No :x:||
 |[ZipGenious](https://zipgenius.com/)|6.3.2.3116|freeware|No :x:||
 |[Zipware](https://www.zipware.org/)|1.6|freeware|No :x:||
 
@@ -51,6 +51,10 @@ A question came up: **"What archiver software can propagate MOTW to extracted fi
 - .docx .doc .xls .xlsx .ppt .pptx .wiz
 
 I previously tested Bandizip with a ZIP archive file that contained only text files, and I misunderstood that Bandizip does not propagate MOTW.
+
+<a id="*2">*2</a>: Jernej Simončič ([@jernej__s](https://twitter.com/jernej__s)) kindly contacted the developer of WinRAR and got [the answer](https://github.com/nmantani/archiver-MOTW-support-comparison/issues/1) that WinRAR propagates MOTW only to Microsoft Office document files. It seems that the supported file types are not documented. I did additional tests with WinRAR 6.11 and confirmed that it propagates MOTW to document files of Word, Excel, and PowerPoint (files of Access and Publisher are not supported).
+
+I previously tested WinRAR with a ZIP archive file that contained only text files, and I misunderstood that WinRAR does not propagate MOTW.
 
 ## FAQ
 - ### What is MOTW (Mark of the Web)?

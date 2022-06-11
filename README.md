@@ -20,18 +20,19 @@ To block macro of malicious Office document files that are extracted from archiv
 
 A question came up: **"What archiver software can propagate MOTW to extracted files?"** So I tested some archiver software and summarized the result.
 
-## Comparison table of MOTW propagation support (as of 21 May 2022)
+## Comparison table of MOTW propagation support (as of 11 June 2022)
 |Name|Tested version|License|MOTW propagation|Note|
 |----|--------------|-------|----------------|----|
 |"Extract all" built-in function of Windows Explorer|Windows 10 21H2|proprietary|Yes :heavy_check_mark:||
 |[Bandizip](https://en.bandisoft.com/bandizip/)|Standard Edition 7.25|freeware|Yes :heavy_check_mark:|Only for specific file extensions <a href="#*1">*1</a>|
-|[Explzh](https://www.ponsoftware.com/en/)|8.64.2|proprietary for commercial use|Yes :heavy_check_mark:||
+|[Explzh](https://www.ponsoftware.com/en/)|8.65|proprietary for commercial use|Yes :heavy_check_mark:||
 |[WinRAR](https://www.win-rar.com/)|6.11 (trial)|proprietary|Yes :heavy_check_mark:|Only for specific file extensions <a href="#*2">*2</a>|
 |[WinZip](https://www.winzip.com/)|26.0 (trial)|proprietary|Yes :heavy_check_mark:||
 |[7-Zip](https://www.7-zip.org/)|21.07|GNU LGPL|No :x:||
 |[Ashampoo ZIP Free](https://www.ashampoo.com/en-us/zip-free)|1.0.7|freeware (registration required)|No :x:||
-|[CAM UnZip](https://www.camunzip.com/)|5.2.1.0|proprietary for commercial use|No :x:||
+|[CAM UnZip](https://www.camunzip.com/)|5.22.6.0|proprietary for commercial use|No :x:||
 |[CubeICE](https://www.cube-soft.jp/cubeice/)|1.1.1|freeware|No :x:||
+|Expand-Archive cmdlet of [PowerShell](https://github.com/PowerShell/PowerShell/)|7.2.4|MIT|No :x:||
 |[IZArc](https://www.izarc.org/)|4.5|freeware|No :x:||
 |[LhaForge](https://claybird.sakura.ne.jp/garage/lhaforge/index.html)|1.6.7|MIT|No :x:||
 |[Lhaplus](http://hoehoe.com/)|1.74|freeware|No :x:||
@@ -39,6 +40,7 @@ A question came up: **"What archiver software can propagate MOTW to extracted fi
 |[PeaZip](https://peazip.github.io/)|8.6.0|GNU LGPL|No :x:||
 |[PowerArchiver](https://www.powerarchiver.com/)|21.00.15 (trial)|proprietary|No :x:||
 |[StuffIt Expander](https://stuffit.com/)|15.0.8|freeware|No :x:||
+|[tar.exe (bsdtar)](https://github.com/libarchive/libarchive) of Windows 10|3.5.2|BSD 2-clause|No :x:||
 |[ZipGenious](https://zipgenius.com/)|6.3.2.3116|freeware|No :x:||
 |[Zipware](https://www.zipware.org/)|1.6|freeware|No :x:||
 

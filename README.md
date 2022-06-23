@@ -44,7 +44,7 @@ A question came up: **"What archiver software can propagate MOTW to extracted fi
 |[ZipGenious](https://zipgenius.com/)|6.3.2.3116|freeware|No :x:||
 |[Zipware](https://www.zipware.org/)|1.6|freeware|No :x:||
 
-<a id="*1">*1</a>: Though 7-Zip has supported MOTW propagation since version 22.00, it is disabled by default. You can enable it with the "Propagate Zone Id stream:" option in "Tools" -> "Options" -> "7-Zip" of 7-Zip File Manager.
+<a id="*1">*1</a>: Though 7-Zip has supported MOTW propagation since version 22.00, it is disabled by default. You can enable it for 7-Zip GUI with the "Propagate Zone Id stream:" option in "Tools" -> "Options" -> "7-Zip" of 7-Zip File Manager.
 
 ![images/7-zip-setting.png](images/7-zip-setting.png)
 
@@ -54,6 +54,8 @@ When you set the option to Yes, 7-Zip propagate MOTW to all extracted files. Whe
 - .xla .xlam .xlm .xls .xlsb .xlsm .xlsx .xlt .xltm .xltx
 
 You can also enable MOTW propagation by setting the registry HKEY_CURRENT_USER\SOFTWARE\7-Zip\Options\WriteZoneIdExtract DWORD to 1.
+
+For 7-Zip CLI, -snz switch is required to propagate MOTW regardless of the option above.
 
 <a id="*2">*2</a>: Accoring to [the document of Bandizip](https://www.bandisoft.com/bandizip/help/zone-identifier/), Bandizip propagates MOTW to files with the following file extensions:
 - .exe .com .msi .scr .bat .cmd .pif .bat .lnk

@@ -38,7 +38,7 @@ A question came up: **"What archiver software can propagate MOTW to extracted fi
 |[IZArc](https://www.izarc.org/)|4.5|freeware|No :x:||
 |[LhaForge](https://claybird.sakura.ne.jp/garage/lhaforge/index.html)|1.6.7|MIT|No :x:||
 |[Lhaplus](http://hoehoe.com/)|1.74|freeware|No :x:||
-|[PowerArchiver](https://www.powerarchiver.com/)|21.00.15 (trial)|proprietary|No :x:||
+|[PowerArchiver](https://www.powerarchiver.com/)|21.00.18 (trial)|proprietary|No :x:||
 |[StuffIt Expander](https://stuffit.com/)|15.0.8|freeware|No :x:||
 |[tar.exe (bsdtar)](https://github.com/libarchive/libarchive) of Windows 10|3.5.2|BSD 2-clause|No :x:||
 |[ZipGenious](https://zipgenius.com/)|6.3.2.3116|freeware|No :x:||

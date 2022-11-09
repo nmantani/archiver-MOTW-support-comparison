@@ -20,16 +20,16 @@ To block macro of malicious Office document files that are extracted from archiv
 
 A question came up: **"What archiver software can propagate MOTW to extracted files?"** So I tested some archiver software and summarized the result.
 
-## Comparison table of MOTW propagation support (as of 4 November 2022)
+## Comparison table of MOTW propagation support (as of 9 November 2022)
 |Name|Tested version|License|MOTW propagation|Note|
 |----|--------------|-------|----------------|----|
-|"Extract all" built-in function of Windows Explorer|Windows 10 21H2|proprietary|Yes :heavy_check_mark:||
-|[7-Zip](https://www.7-zip.org/)|22.01|GNU LGPL|Yes :heavy_check_mark:|Disabled by default <a href="#*1">*1</a>|
-|[Bandizip](https://en.bandisoft.com/bandizip/)|Standard Edition 7.27|freeware|Yes :heavy_check_mark:|Only for specific file extensions <a href="#*2">*2</a>|
+|"Extract all" built-in function of Windows Explorer|Windows 10 21H2|proprietary|Yes :heavy_check_mark:|MOTW bypass vulnerabilities <a href="#*1">*1<a>|
+|[7-Zip](https://www.7-zip.org/)|22.01|GNU LGPL|Yes :heavy_check_mark:|Disabled by default <a href="#*2">*2</a>|
+|[Bandizip](https://en.bandisoft.com/bandizip/)|Standard Edition 7.27|freeware|Yes :heavy_check_mark:|Only for specific file extensions <a href="#*3">*3</a>|
 |[Explzh](https://www.ponsoftware.com/en/)|8.79|proprietary for commercial use|Yes :heavy_check_mark:||
-|[NanaZip](https://github.com/M2Team/NanaZip)|2.0.396.0|MIT|Yes :heavy_check_mark:|Disabled by default <a href="#*3">*3</a>|
+|[NanaZip](https://github.com/M2Team/NanaZip)|2.0.396.0|MIT|Yes :heavy_check_mark:|Disabled by default <a href="#*4">*4</a>|
 |[PeaZip](https://peazip.github.io/)|8.9.0|GNU LGPL|Yes :heavy_check_mark:||
-|[WinRAR](https://www.win-rar.com/)|6.11 (trial)|proprietary|Yes :heavy_check_mark:|Only for specific file extensions <a href="#*4">*4</a>|
+|[WinRAR](https://www.win-rar.com/)|6.11 (trial)|proprietary|Yes :heavy_check_mark:|Only for specific file extensions <a href="#*5">*5</a>|
 |[WinZip](https://www.winzip.com/)|27.0 (trial)|proprietary|Yes :heavy_check_mark:||
 |[Ashampoo ZIP Free](https://www.ashampoo.com/en-us/zip-free)|1.0.7|freeware (registration required)|No :x:||
 |[CAM UnZip](https://www.camunzip.com/)|5.22.6.0|proprietary for commercial use|No :x:||
@@ -44,7 +44,11 @@ A question came up: **"What archiver software can propagate MOTW to extracted fi
 |[ZipGenious](https://zipgenius.com/)|6.3.2.3116|freeware|No :x:||
 |[Zipware](https://www.zipware.org/)|1.6|freeware|No :x:||
 
-<a id="*1">*1</a>: Though 7-Zip has supported MOTW propagation since version 22.00, it is disabled by default. You can enable it for 7-Zip GUI with the "Propagate Zone Id stream:" option in "Tools" -> "Options" -> "7-Zip" of 7-Zip File Manager.
+<a id="*1">*1</a>: There were two MOTW bypass vulnerabilities of Windows Explorer and they were fixed by the security updates released on 8 November 2022.
+- [CVE-2022-41049](https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2022-41049) ([Twitter thread](https://twitter.com/wdormann/status/1544431763358875648) by Will Dormann ([@wdormann](https://twitter.com/wdormann)) and [detailed writeup](https://breakdev.org/zip-motw-bug-analysis/) by Kuba Gretzky ([@mrgretzky](https://twitter.com/mrgretzky)))
+- [CVE-2022-41091](https://msrc.microsoft.com/update-guide/en-us/vulnerability/CVE-2022-41091) ([Twitter thread](https://twitter.com/wdormann/status/1587183012755685380) by Will Dormann ([@wdormann](https://twitter.com/wdormann)))
+
+<a id="*2">*2</a>: Though 7-Zip has supported MOTW propagation since version 22.00, it is disabled by default. You can enable it for 7-Zip GUI with the "Propagate Zone Id stream:" option in "Tools" -> "Options" -> "7-Zip" of 7-Zip File Manager.
 
 ![images/7-zip-setting.png](images/7-zip-setting.png)
 
@@ -57,7 +61,7 @@ You can also enable MOTW propagation by setting the registry HKEY_CURRENT_USER\S
 
 For 7-Zip CLI, -snz switch is required to propagate MOTW regardless of the option above.
 
-<a id="*2">*2</a>: Accoring to [the document of Bandizip](https://www.bandisoft.com/bandizip/help/zone-identifier/), Bandizip propagates MOTW to files with the following file extensions:
+<a id="*3">*3</a>: Accoring to [the document of Bandizip](https://www.bandisoft.com/bandizip/help/zone-identifier/), Bandizip propagates MOTW to files with the following file extensions:
 - .exe .com .msi .scr .bat .cmd .pif .bat .lnk
 - .zip .zipx .rar .7z .alz .egg .cab .bh
 - .iso .img .isz .udf .wim .bin .i00
@@ -67,27 +71,27 @@ For 7-Zip CLI, -snz switch is required to propagate MOTW regardless of the optio
 
 I previously tested Bandizip with a ZIP archive file that contained only text files, and I misunderstood that Bandizip does not propagate MOTW.
 
-<a id="*3">*3</a>: Though NanaZip has supported MOTW propagation since version 2.0 Preview 1, it is disabled by default. You can enable it with the "Propagate Zone Id stream:" option in "Tools" -> "Options" -> "Integration" of NanaZip GUI.
+<a id="*4">*4</a>: Though NanaZip has supported MOTW propagation since version 2.0 Preview 1, it is disabled by default. You can enable it with the "Propagate Zone Id stream:" option in "Tools" -> "Options" -> "Integration" of NanaZip GUI.
 
 When you set the option to Yes, NanaZip propagate MOTW to all extracted files. When you set it to "For Office files", NanaZip propagate MOTW to files with the following file extensions:
 - .doc .docb .docm .docx .dot .dotm .dotx .wbk .wll .wwl
 - .pot .potm .potx .ppa .ppam .pps .ppsm .ppsx .ppt .pptm .pptx .sldm .sldx
 - .xla .xlam .xlm .xls .xlsb .xlsm .xlsx .xlt .xltm .xltx
 
-<a id="*4">*4</a>: Jernej Simončič ([@jernej__s](https://twitter.com/jernej__s)) kindly contacted the developer of WinRAR and got [the answer](https://github.com/nmantani/archiver-MOTW-support-comparison/issues/1) that WinRAR propagates MOTW only to Microsoft Office document files. It seems that the supported file types are not documented. I did additional tests with WinRAR 6.11 and confirmed that it propagates MOTW to document files of Word, Excel, and PowerPoint (files of Access and Publisher are not supported).
+<a id="*5">*5</a>: Jernej Simončič ([@jernej__s](https://twitter.com/jernej__s)) kindly contacted the developer of WinRAR and got [the answer](https://github.com/nmantani/archiver-MOTW-support-comparison/issues/1) that WinRAR propagates MOTW only to Microsoft Office document files. It seems that the supported file types are not documented. I did additional tests with WinRAR 6.11 and confirmed that it propagates MOTW to document files of Word, Excel, and PowerPoint (files of Access and Publisher are not supported).
 
 I previously tested WinRAR with a ZIP archive file that contained only text files, and I misunderstood that WinRAR does not propagate MOTW.
 
-## Comparison table of MOTW propagation behavior (as of 4 November 2022)
+## Comparison table of MOTW propagation behavior (as of 9 November 2022)
 |Name|Tested version|MOTW propagation behavior|
 |----|--------------|-------------------------|
 |"Extract all" built-in function of Windows Explorer|Windows 10 21H2|<ul><li>MOTW is propagated only if ZoneId value of the MOTW is 3 (Internet) or 4 (Untrusted sites)</li><li>ZoneId field of the archive file is inherited</li><li>The absolute path of the archive file is set for the ReferrerUrl field</li><li>All other fields are ignored</li></ul>|
-|[7-Zip](https://www.7-zip.org/)|22.01|<ul><li>MOTW of the archive file is propagated without modification</li><li>Only for specific file extensions if the "Propagate Zone Id stream:" option is set to "For Office files" <a href="#*1">*1</a></li></ul>|
-|[Bandizip](https://en.bandisoft.com/bandizip/)|Standard Edition 7.27|<ul><li>MOTW of the archive file is propagated without modification</li><li>Only for specific file extensions <a href="#*2">*2</a></li></ul>|
+|[7-Zip](https://www.7-zip.org/)|22.01|<ul><li>MOTW of the archive file is propagated without modification</li><li>Only for specific file extensions if the "Propagate Zone Id stream:" option is set to "For Office files" <a href="#*2">*2</a></li></ul>|
+|[Bandizip](https://en.bandisoft.com/bandizip/)|Standard Edition 7.27|<ul><li>MOTW of the archive file is propagated without modification</li><li>Only for specific file extensions <a href="#*3">*3</a></li></ul>|
 |[Explzh](https://www.ponsoftware.com/en/)|8.73|<ul><li>MOTW is propagated only if ZoneId value of the MOTW is 3 (Internet)</li><li>Only ZoneId field of the archive file is inherited and all other fields are ignored</li></ul>|
-|[NanaZip](https://github.com/M2Team/NanaZip)|2.0 Preview 1|<ul><li>MOTW of the archive file is propagated without modification</li><li>Only for specific file extensions if the "Propagate Zone Id stream:" option is set to "For Office files" <a href="#*3">*3</a></li></ul>|
+|[NanaZip](https://github.com/M2Team/NanaZip)|2.0 Preview 1|<ul><li>MOTW of the archive file is propagated without modification</li><li>Only for specific file extensions if the "Propagate Zone Id stream:" option is set to "For Office files" <a href="#*4">*4</a></li></ul>|
 |[PeaZip](https://peazip.github.io/)|8.8.0|<ul><li>MOTW of the archive file is propagated without modification</li></ul>|
-|[WinRAR](https://www.win-rar.com/)|6.11 (trial)|<ul><li>MOTW is propagated only if ZoneId value of the MOTW is 3 (Internet)</li><li>Only ZoneId field of the archive file is inherited and all other fields are ignored</li><li>Only for specific file extensions <a href="#*4">*4</a></li></ul>|
+|[WinRAR](https://www.win-rar.com/)|6.11 (trial)|<ul><li>MOTW is propagated only if ZoneId value of the MOTW is 3 (Internet)</li><li>Only ZoneId field of the archive file is inherited and all other fields are ignored</li><li>Only for specific file extensions <a href="#*5">*5</a></li></ul>|
 |[WinZip](https://www.winzip.com/)|26.0 (trial)|<ul><li>MOTW is propagated only if ZoneId value of the MOTW is 3 (Internet) or 4 (Untrusted sites)</li><li>ZoneId field of the archive file is inherited</li><li>The absolute path of the archive file is set for the ReferrerUrl field</li><li>All other fields are ignored</li></ul>|
 
 ### MOTW propagation examples

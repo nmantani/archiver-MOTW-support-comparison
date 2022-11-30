@@ -1,5 +1,7 @@
 # Comparison of MOTW (Mark of the Web) propagation support of archiver software for Windows
 
+English | [Japanese](README.ja.md)
+
 ## Background
 On 3 March 2022, Microsoft [announced](https://docs.microsoft.com/en-us/deployoffice/security/internet-macros-blocked) that the default behavior of Office applications on Windows will be changed to block macros in files from the internet (such as email attachment).
 
@@ -44,7 +46,7 @@ A question came up: **"What archiver software can propagate MOTW to extracted fi
 |[ZipGenious](https://zipgenius.com/)|6.3.2.3116|freeware|No :x:||
 |[Zipware](https://www.zipware.org/)|1.6|freeware|No :x:||
 
-<a id="*1">*1</a>: There were two MOTW bypass vulnerabilities of Windows Explorer and they were fixed by the security updates released on 8 November 2022.
+<a id="*1">*1</a>: There were two MOTW bypass vulnerabilities of Windows and they were fixed by the security updates released on 8 November 2022.
 - [CVE-2022-41049](https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2022-41049) ([Twitter thread](https://twitter.com/wdormann/status/1544431763358875648) by Will Dormann ([@wdormann](https://twitter.com/wdormann)) and [detailed writeup](https://breakdev.org/zip-motw-bug-analysis/) by Kuba Gretzky ([@mrgretzky](https://twitter.com/mrgretzky)))
 - [CVE-2022-41091](https://msrc.microsoft.com/update-guide/en-us/vulnerability/CVE-2022-41091) ([Twitter thread](https://twitter.com/wdormann/status/1587183012755685380) by Will Dormann ([@wdormann](https://twitter.com/wdormann)))
 
@@ -61,7 +63,7 @@ You can also enable MOTW propagation by setting the registry HKEY_CURRENT_USER\S
 
 For 7-Zip CLI, -snz switch is required to propagate MOTW regardless of the option above.
 
-<a id="*3">*3</a>: There was a MOTW bypass vulnerability of Bandizip and it was fixed in Bandizip 7.29 released on 21 November 2022 ([release note](https://en.bandisoft.com/bandizip/history/)). The vulnerability is almost the same as CVE-2022-41049 of Windows Explorer (<a href="#*1">*1</a>) and it can be exploited by just setting read-only file attributes to ZIP file contents. I found the vulnerability and reported it to Bandisoft, the developer of Bandizip. Bandisoft fixed it very quickly.
+<a id="*3">*3</a>: There was a MOTW bypass vulnerability of Bandizip and it was fixed in Bandizip 7.29 released on 21 November 2022 ([release note](https://en.bandisoft.com/bandizip/history/)). The vulnerability is almost the same as CVE-2022-41049 of Windows (<a href="#*1">*1</a>) and it can be exploited by just setting read-only file attributes to ZIP file contents. I found the vulnerability and reported it to Bandisoft, the developer of Bandizip. Bandisoft fixed it very quickly.
 
 <a id="*4">*4</a>: Accoring to [the document of Bandizip](https://www.bandisoft.com/bandizip/help/zone-identifier/), Bandizip propagates MOTW to files with the following file extensions:
 - .exe .com .msi .scr .bat .cmd .pif .bat .lnk
@@ -136,6 +138,9 @@ In these examples, MOTW was manually set for a ZIP archive file motw-test.zip wi
 
   **Update on 11 April 2022:**  
   According to the blog article [.ISO Files With Office Maldocs & Protected View in Office 2019 and 2021](https://blog.didierstevens.com/2022/04/04/iso-files-with-office-maldocs-protected-view-in-office-2019-and-2021/) by Didier Stevens ([@DidierStevens](http://twitter.com/DidierStevens)), Office 2019 and 2021 use protected view to open Office document stored inside an ISO file with MOTW. This behavior was introduced in August 2021.
+
+  **Update on 30 November 2022:**  
+  According to [the tweet](https://twitter.com/BillDemirkapi/status/1590062146486140928) by Bill Demirkapi ([@BillDemirkapi](https://twitter.com/BillDemirkapi/)), Microsoft fixed handling of MOTW for virtual disk container files such as ISO and VHD on Windows by the security updates released on 8 November 2022. When applications open files inside a virtual disk container file downloaded from the Internet, the files will inherit the MOTW of the virtual disk container file.
 
 ## References
 - Macros from the internet will be blocked by default in Office  

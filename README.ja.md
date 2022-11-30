@@ -131,7 +131,7 @@ MOTW の伝播はレジストリの HKEY_CURRENT_USER\SOFTWARE\7-Zip\Options\Wri
   詳細について [Issues](https://github.com/nmantani/archiver-MOTW-support-comparison/issues) でご提供いただくか [Pull requests](https://github.com/nmantani/archiver-MOTW-support-comparison/pulls) で修正案をご提供ください。
 
 - ### ディスクイメージファイル (.iso ファイルや .vhd ファイル等) 中の悪意のある Office ドキュメントはブロックを回避できますか?
-  はい。もしディスクイメージファイルが NTFS 代替データストリームをサポートしていない場合は、MOTW はディスクイメージファイル中のファイルには付けられません。以下を参照してください:
+  ~~はい。もしディスクイメージファイルが NTFS 代替データストリームをサポートしていない場合は、MOTW はディスクイメージファイル中のファイルには付けられません。以下を参照してください:~~
   - [Mark-of-the-Web from a red team’s perspective](https://outflank.nl/blog/2020/03/30/mark-of-the-web-from-a-red-teams-perspective/) by Stan Hegt ([@stanhacked](https://twitter.com/stanhacked))
   - [The Dangers of VHD and VHDX Files](https://insights.sei.cmu.edu/blog/the-dangers-of-vhd-and-vhdx-files/) by Will Dormann ([@wdormann](https://twitter.com/wdormann))
   - [Subvert Trust Controls: Mark-of-the-Web Bypass](https://attack.mitre.org/techniques/T1553/005/) (an article in [MITRE ATT&CK](https://attack.mitre.org/) knowledge base).

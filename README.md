@@ -89,7 +89,7 @@ I previously tested WinRAR with a ZIP archive file that contained only text file
 ## Comparison table of MOTW propagation behavior (as of 11 March 2023)
 |Name|Tested version|MOTW propagation behavior|
 |----|--------------|-------------------------|
-|"Extract all" built-in function of Windows Explorer|Windows 10 21H2|<ul><li>MOTW is propagated only if ZoneId value of the MOTW is 3 (Internet) or 4 (Untrusted sites)</li><li>ZoneId field of the archive file is inherited</li><li>The absolute path of the archive file is set for the ReferrerUrl field</li><li>All other fields are ignored</li></ul>|
+|"Extract all" built-in function of Windows Explorer|Windows 10 22H2|<ul><li>MOTW is propagated only if ZoneId value of the MOTW is 3 (Internet) or 4 (Untrusted sites)</li><li>ZoneId field of the archive file is inherited</li><li>The absolute path of the archive file is set for the ReferrerUrl field</li><li>All other fields are ignored</li></ul>|
 |[7-Zip](https://www.7-zip.org/)|22.01|<ul><li>MOTW of the archive file is propagated without modification</li><li>Only for specific file extensions if the "Propagate Zone Id stream:" option is set to "For Office files" <a href="#*2">*2</a></li></ul>|
 |[Bandizip](https://en.bandisoft.com/bandizip/)|Standard Edition 7.30|<ul><li>MOTW of the archive file is propagated without modification</li><li>Only for specific file extensions <a href="#*4">*4</a></li></ul>|
 |[Explzh](https://www.ponsoftware.com/en/)|8.95|<ul><li>MOTW is propagated only if ZoneId value of the MOTW is 3 (Internet)</li><li>Only ZoneId field of the archive file is inherited and all other fields are ignored</li></ul>|

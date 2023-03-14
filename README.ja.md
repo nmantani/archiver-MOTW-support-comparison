@@ -89,7 +89,7 @@ MOTW の伝播はレジストリの HKEY_CURRENT_USER\SOFTWARE\7-Zip\Options\Wri
 ## MOTW 伝播の動作の比較表 (2023年3月11日時点)
 |名称|テストしたバージョン|MOTW 伝播の動作|
 |----|--------------|-------------------------|
-|Windowsのエクスプローラの「すべて展開」|Windows 10 21H2|<ul><li>MOTW は ZoneId の値が 3 (インターネット) または 4 (信頼されていないサイト) の場合にのみ伝播されます。</li><li>圧縮ファイルの ZoneId のフィールドが引き継がれます。</li><li>圧縮ファイルの絶対パスが ReferrerUrl のフィールドに設定されます。</li><li>他のフィールドは全て無視されます。</li></ul>|
+|Windowsのエクスプローラの「すべて展開」|Windows 10 22H2|<ul><li>MOTW は ZoneId の値が 3 (インターネット) または 4 (信頼されていないサイト) の場合にのみ伝播されます。</li><li>圧縮ファイルの ZoneId のフィールドが引き継がれます。</li><li>圧縮ファイルの絶対パスが ReferrerUrl のフィールドに設定されます。</li><li>他のフィールドは全て無視されます。</li></ul>|
 |[7-Zip](https://www.7-zip.org/)|22.01|<ul><li>圧縮ファイルの MOTW はそのまま伝播されます。</li><li>「Zone.Id ストリームの伝達:」の設定を「Office ファイルの場合」に設定した場合は特定のファイル拡張子のファイルにのみ伝播されます。 <a href="#*2">*2</a></li></ul>|
 |[Bandizip](https://en.bandisoft.com/bandizip/)|Standard Edition 7.30|<ul><li>圧縮ファイルの MOTW はそのまま伝播されます。</li><li>特定のファイル拡張子のファイルにのみ伝播されます。  <a href="#*4">*4</a></li></ul>|
 |[Explzh](https://www.ponsoftware.com/en/)|8.95|<ul><li>MOTW は ZoneId の値が 3 (インターネット) の場合にのみ伝播されます。</li><li>ZoneId のフィールドのみが引き継がれて他のフィールドは全て無視されます。</li></ul>|

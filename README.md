@@ -101,7 +101,7 @@ I previously tested WinRAR with a ZIP archive file that contained only text file
 |[NanaZip](https://github.com/M2Team/NanaZip)|2.0.450.0|<ul><li>MOTW of the archive file is propagated without modification</li><li>Only for specific file extensions if the "Propagate Zone Id stream:" option is set to "For Office files" <a href="#*5">*5</a></li></ul>|
 |[PeaZip](https://peazip.github.io/)|9.1.0|<ul><li>MOTW of the archive file is propagated without modification</li></ul>|
 |[TC4Shell](https://www.tc4shell.com/)|21.2.0 (trial)|<ul><li>Only ZoneId field of the archive file is inherited and all other fields are ignored</li></ul>|
-|[Total Commander](https://www.ghisler.com/)|10.52 (trial)|<ul><li>MOTW of the archive file is propagated except the ReferrerUrl field</li></ul>|
+|[Total Commander](https://www.ghisler.com/)|10.52 (trial)|<ul><li>MOTW of the archive file is propagated except for the ReferrerUrl field</li></ul>|
 |[WinRAR](https://www.win-rar.com/)|6.21 (trial)|<ul><li>MOTW is propagated only if ZoneId value of the MOTW is 3 (Internet)</li><li>Only ZoneId field of the archive file is inherited and all other fields are ignored</li><li>Only for specific file extensions <a href="#*6">*6</a></li></ul>|
 |[WinZip](https://www.winzip.com/)|27.0 (trial)|<ul><li>MOTW is propagated only if ZoneId value of the MOTW is 3 (Internet) or 4 (Untrusted sites)</li><li>ZoneId field of the archive file is inherited</li><li>The absolute path of the archive file is set for the ReferrerUrl field</li><li>All other fields are ignored</li></ul>|
 

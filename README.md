@@ -22,7 +22,7 @@ To block macro of malicious Office document files that are extracted from archiv
 
 A question came up: **"What archiver software can propagate MOTW to extracted files?"** So I tested some archiver software and summarized the result.
 
-## Comparison table of MOTW propagation support (as of 11 March 2023)
+## Comparison table of MOTW propagation support (as of 25 March 2023)
 |Name|Tested version|License|MOTW propagation|Note|
 |----|--------------|-------|----------------|----|
 |"Extract all" built-in function of Windows Explorer|Windows 10 22H2|proprietary|Yes :heavy_check_mark:|MOTW bypass vulnerabilities (fixed) <a href="#*1">*1</a>|
@@ -31,18 +31,23 @@ A question came up: **"What archiver software can propagate MOTW to extracted fi
 |[Explzh](https://www.ponsoftware.com/en/)|8.95|proprietary for commercial use|Yes :heavy_check_mark:||
 |[NanaZip](https://github.com/M2Team/NanaZip)|2.0.450.0|MIT|Yes :heavy_check_mark:|Disabled by default <a href="#*5">*5</a>|
 |[PeaZip](https://peazip.github.io/)|9.1.0|GNU LGPL|Yes :heavy_check_mark:||
+|[Total Commander](https://www.ghisler.com/)|10.52 (trial)|proprietary|Yes :heavy_check_mark:||
+|[TC4Shell](https://www.tc4shell.com/)|21.2.0 (trial)|proprietary|Yes :heavy_check_mark:||
 |[WinRAR](https://www.win-rar.com/)|6.21 (trial)|proprietary|Yes :heavy_check_mark:|Only for specific file extensions <a href="#*6">*6</a>|
 |[WinZip](https://www.winzip.com/)|27.0 (trial)|proprietary|Yes :heavy_check_mark:||
 |[Ashampoo ZIP Free](https://www.ashampoo.com/en-us/zip-free)|1.0.7|freeware (registration required)|No :x:||
 |[CAM UnZip](https://www.camunzip.com/)|5.22.6.0|proprietary for commercial use|No :x:||
 |[CubeICE](https://www.cube-soft.jp/cubeice/)|2.2.1|freeware|No :x:||
 |Expand-Archive cmdlet of [PowerShell](https://github.com/PowerShell/PowerShell/)|7.3.3|MIT|No :x:||
+|[Express Zip](https://www.nchsoftware.com/zip/)|10.00|proprietary for commercial use|No :x:||
+|[File Compact](https://www.sourcenext.com/product/pc/oth/pc_oth_001267/)|7.02|proprietary|No :x:||
 |[IZArc](https://www.izarc.org/)|4.5|freeware|No :x:||
 |[LhaForge](https://claybird.sakura.ne.jp/garage/lhaforge/index.html)|1.6.7|MIT|No :x:||
 |[Lhaplus](http://hoehoe.com/)|1.74|freeware|No :x:||
 |[PowerArchiver](https://www.powerarchiver.com/)|21.00.18 (trial)|proprietary|No :x:||
 |[StuffIt Expander](https://stuffit.com/)|15.0.8|freeware|No :x:||
 |[tar.exe (bsdtar)](https://github.com/libarchive/libarchive) of Windows 10|3.5.2|BSD 2-clause|No :x:||
+|[Universal Extractor 2](https://github.com/Bioruebe/UniExtract2)|2.0.0 RC 3|GNU GPLv2|No :x:||
 |[ZipGenious](https://zipgenius.com/)|6.3.2.3116|freeware|No :x:||
 |[Zipware](https://www.zipware.org/)|1.6|freeware|No :x:||
 
@@ -86,7 +91,7 @@ When you set the option to Yes, NanaZip propagate MOTW to all extracted files. W
 
 I previously tested WinRAR with a ZIP archive file that contained only text files, and I misunderstood that WinRAR does not propagate MOTW.
 
-## Comparison table of MOTW propagation behavior (as of 11 March 2023)
+## Comparison table of MOTW propagation behavior (as of 25 March 2023)
 |Name|Tested version|MOTW propagation behavior|
 |----|--------------|-------------------------|
 |"Extract all" built-in function of Windows Explorer|Windows 10 22H2|<ul><li>MOTW is propagated only if ZoneId value of the MOTW is 3 (Internet) or 4 (Untrusted sites)</li><li>ZoneId field of the archive file is inherited</li><li>The absolute path of the archive file is set for the ReferrerUrl field</li><li>All other fields are ignored</li></ul>|
@@ -95,6 +100,8 @@ I previously tested WinRAR with a ZIP archive file that contained only text file
 |[Explzh](https://www.ponsoftware.com/en/)|8.95|<ul><li>MOTW is propagated only if ZoneId value of the MOTW is 3 (Internet)</li><li>Only ZoneId field of the archive file is inherited and all other fields are ignored</li></ul>|
 |[NanaZip](https://github.com/M2Team/NanaZip)|2.0.450.0|<ul><li>MOTW of the archive file is propagated without modification</li><li>Only for specific file extensions if the "Propagate Zone Id stream:" option is set to "For Office files" <a href="#*5">*5</a></li></ul>|
 |[PeaZip](https://peazip.github.io/)|9.1.0|<ul><li>MOTW of the archive file is propagated without modification</li></ul>|
+|[TC4Shell](https://www.tc4shell.com/)|21.2.0 (trial)|<ul><li>Only ZoneId field of the archive file is inherited and all other fields are ignored</li></ul>|
+|[Total Commander](https://www.ghisler.com/)|10.52 (trial)|<ul><li>MOTW of the archive file is propagated except the ReferrerUrl field</li></ul>|
 |[WinRAR](https://www.win-rar.com/)|6.21 (trial)|<ul><li>MOTW is propagated only if ZoneId value of the MOTW is 3 (Internet)</li><li>Only ZoneId field of the archive file is inherited and all other fields are ignored</li><li>Only for specific file extensions <a href="#*6">*6</a></li></ul>|
 |[WinZip](https://www.winzip.com/)|27.0 (trial)|<ul><li>MOTW is propagated only if ZoneId value of the MOTW is 3 (Internet) or 4 (Untrusted sites)</li><li>ZoneId field of the archive file is inherited</li><li>The absolute path of the archive file is set for the ReferrerUrl field</li><li>All other fields are ignored</li></ul>|
 
@@ -107,8 +114,11 @@ In these examples, MOTW was manually set for a ZIP archive file motw-test.zip wi
 - MOTW of a file extracted with 7-Zip, Bandizip, NanaZip, or PeaZip:
 ![images/bandizip.png](images/bandizip.png)
 
-- MOTW of a file extracted with Explzh or WinRAR:
+- MOTW of a file extracted with Explzh, TC4Shell, or WinRAR:
 ![images/explzh.png](images/explzh.png)
+
+- MOTW of a file extracted with Total Commander:
+![images/total-commander.png](images/total-commander.png)
 
 ## FAQ
 - ### What is MOTW (Mark of the Web)?

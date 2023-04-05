@@ -28,16 +28,16 @@
 |Windowsのエクスプローラの「すべて展開」|Windows 10 22H2|有償|する :heavy_check_mark:|MOTW バイパスの脆弱性(修正済) <a href="#*1">*1</a>|
 |[7-Zip](https://www.7-zip.org/)|22.01|GNU LGPL|する :heavy_check_mark:|デフォルトで無効 <a href="#*2">*2</a>|
 |[Bandizip](https://en.bandisoft.com/bandizip/)|Standard Edition 7.30|フリーウェア|する :heavy_check_mark:|MOTW バイパスの脆弱性(修正済) <a href="#*3">*3</a><br>特定のファイル拡張子のみ <a href="#*4">*4</a>|
+|[CubeICE](https://www.cube-soft.jp/cubeice/)|3.0.1|フリーウェア(有償版もあり)|する :heavy_check_mark:|MOTW バイパスの脆弱性(修正済) <a href="#*5">*5</a>|
 |[Explzh](https://www.ponsoftware.com/en/)|8.95|商用利用は有償|する :heavy_check_mark:||
-|[NanaZip](https://github.com/M2Team/NanaZip)|2.0.450.0|MIT|する :heavy_check_mark:|デフォルトで無効 <a href="#*5">*5</a>|
+|[NanaZip](https://github.com/M2Team/NanaZip)|2.0.450.0|MIT|する :heavy_check_mark:|デフォルトで無効 <a href="#*6">*6</a>|
 |[PeaZip](https://peazip.github.io/)|9.1.0|GNU LGPL|する :heavy_check_mark:||
 |[TC4Shell](https://www.tc4shell.com/)|21.2.0 (試用版)|有償|する :heavy_check_mark:||
 |[Total Commander](https://www.ghisler.com/)|10.52 (試用版)|有償|する :heavy_check_mark:||
-|[WinRAR](https://www.win-rar.com/)|6.21 (試用版)|有償|する :heavy_check_mark:|特定のファイル拡張子のみ <a href="#*6">*6</a>|
+|[WinRAR](https://www.win-rar.com/)|6.21 (試用版)|有償|する :heavy_check_mark:|特定のファイル拡張子のみ <a href="#*7">*7</a>|
 |[WinZip](https://www.winzip.com/)|27.0 (試用版)|有償|する :heavy_check_mark:||
 |[Ashampoo ZIP Free](https://www.ashampoo.com/en-us/zip-free)|1.0.7|フリーウェア (登録が必要)|しない :x:||
 |[CAM UnZip](https://www.camunzip.com/)|5.22.6.0|商用利用は有償|しない :x:||
-|[CubeICE](https://www.cube-soft.jp/cubeice/)|2.2.1|フリーウェア|しない :x:||
 |[PowerShell](https://github.com/PowerShell/PowerShell/) の Expand-Archive コマンドレット|7.3.3|MIT|しない :x:||
 |[Express Zip](https://www.nchsoftware.com/zip/)|10.00|商用利用は有償|しない :x:||
 |[IZArc](https://www.izarc.org/)|4.5|フリーウェア|しない :x:||
@@ -80,23 +80,26 @@ MOTW の伝播はレジストリの HKEY_CURRENT_USER\SOFTWARE\7-Zip\Options\Wri
 
 私は以前にテキストファイルのみを含む ZIP ファイルで Bandizip をテストしていたため、Bandizip が MOTW を伝播しないと誤解していました。
 
-<a id="*5">*5</a>: NanaZip はバージョン 2.0 Preview 1 から MOTW の伝播をサポートしていますが、デフォルトで無効になっています。NanaZip の GUI の「ツール」→「オプション」→「Integration」にある「Zone.Id ストリームの伝達:」で MOTW の伝播を有効にできます。
+<a id="*5">*5</a>: CubeICE はバージョン3.0.0から MOTW の伝播をサポートしていますが MOTW バイパスの脆弱性がありました。この脆弱性は2023年4月5日にリリースされたバージョン3.0.1で修正されました([リリースノート](https://clown.cube-soft.jp/entry/2023/04/03/cubeice-3.0.0-or-later))。この脆弱性は Windows の CVE-2022-41049 の脆弱性 (<a href="#*1">*1</a>) とほとんど同じで、ZIP ファイル内の圧縮されたファイルに読み取り専用の属性を付けるだけで脆弱性を突くことができます。私はこの脆弱性を発見して CubeICE の開発元の CubeSoft に報告しました。CubeSoft は非常に迅速に脆弱性を修正してくれました。
+
+<a id="*6">*6</a>: NanaZip はバージョン 2.0 Preview 1 から MOTW の伝播をサポートしていますが、デフォルトで無効になっています。NanaZip の GUI の「ツール」→「オプション」→「Integration」にある「Zone.Id ストリームの伝達:」で MOTW の伝播を有効にできます。
 
 このオプションを「Yes」に設定した場合は、NanaZip は全ての展開したファイルに MOTW を伝播します。「Office ファイルの場合」に設定した場合は、NanaZip は以下のファイル拡張子のファイルに MOTW を伝播します:
 - .doc .docb .docm .docx .dot .dotm .dotx .wbk .wll .wwl
 - .pot .potm .potx .ppa .ppam .pps .ppsm .ppsx .ppt .pptm .pptx .sldm .sldx
 - .xla .xlam .xlm .xls .xlsb .xlsm .xlsx .xlt .xltm .xltx
 
-<a id="*6">*6</a>: Jernej Simončič 氏 ([@jernej__s](https://twitter.com/jernej__s)) がご親切に WinRAR の開発元に問い合わせて、WinRAR は Microsoft Office ドキュメントファイルにのみ MOTW を伝播する、という[回答](https://github.com/nmantani/archiver-MOTW-support-comparison/issues/1)を得てくださいました。サポートしているファイル拡張子はドキュメントに記載されていないようです。私は WinRAR 6.11 で追加のテストを行って、Word、Excel、PowerPoint のファイル (Access と Publisher は未対応) に MOTW を伝播することを確認しました。
+<a id="*7">*7</a>: Jernej Simončič 氏 ([@jernej__s](https://twitter.com/jernej__s)) がご親切に WinRAR の開発元に問い合わせて、WinRAR は Microsoft Office ドキュメントファイルにのみ MOTW を伝播する、という[回答](https://github.com/nmantani/archiver-MOTW-support-comparison/issues/1)を得てくださいました。サポートしているファイル拡張子はドキュメントに記載されていないようです。私は WinRAR 6.11 で追加のテストを行って、Word、Excel、PowerPoint のファイル (Access と Publisher は未対応) に MOTW を伝播することを確認しました。
 
 私は以前にテキストファイルのみを含む ZIP ファイルで Bandizip WinRAR が MOTW を伝播しないと誤解していました。
 
-## MOTW 伝播の動作の比較表 (2023年3月25日時点)
+## MOTW 伝播の動作の比較表 (2023年4月5日時点)
 |名称|テストしたバージョン|MOTW 伝播の動作|
 |----|--------------|-------------------------|
 |Windowsのエクスプローラの「すべて展開」|Windows 10 22H2|<ul><li>MOTW は ZoneId の値が 3 (インターネット) または 4 (信頼されていないサイト) の場合にのみ伝播されます。</li><li>圧縮ファイルの ZoneId のフィールドが引き継がれます。</li><li>圧縮ファイルの絶対パスが ReferrerUrl のフィールドに設定されます。</li><li>他のフィールドは全て無視されます。</li></ul>|
 |[7-Zip](https://www.7-zip.org/)|22.01|<ul><li>圧縮ファイルの MOTW はそのまま伝播されます。</li><li>「Zone.Id ストリームの伝達:」の設定を「Office ファイルの場合」に設定した場合は特定のファイル拡張子のファイルにのみ伝播されます。 <a href="#*2">*2</a></li></ul>|
 |[Bandizip](https://en.bandisoft.com/bandizip/)|Standard Edition 7.30|<ul><li>圧縮ファイルの MOTW はそのまま伝播されます。</li><li>特定のファイル拡張子のファイルにのみ伝播されます。  <a href="#*4">*4</a></li></ul>|
+|[CubeICE](https://www.cube-soft.jp/cubeice/)|3.0.1|<ul><li>MOTW は ZoneId の値が 3 (インターネット) または 4 (信頼されていないサイト) の場合にのみ伝播されます。</li><li>ZoneId のフィールドのみが引き継がれて他のフィールドは全て無視されます。</li></ul>|
 |[Explzh](https://www.ponsoftware.com/en/)|8.95|<ul><li>MOTW は ZoneId の値が 3 (インターネット) の場合にのみ伝播されます。</li><li>ZoneId のフィールドのみが引き継がれて他のフィールドは全て無視されます。</li></ul>|
 |[NanaZip](https://github.com/M2Team/NanaZip)|2.0.450.0|<ul><li>圧縮ファイルの MOTW はそのまま伝播されます。</li><li>「Zone.Id ストリームの伝達:」の設定を「Office ファイルの場合」に設定した場合は特定のファイル拡張子のファイルにのみ伝播されます。 <a href="#*5">*5</a></li></ul>|
 |[PeaZip](https://peazip.github.io/)|9.1.0|<ul><li>圧縮ファイルの MOTW はそのまま伝播されます。</li></ul>|
@@ -114,7 +117,7 @@ MOTW の伝播はレジストリの HKEY_CURRENT_USER\SOFTWARE\7-Zip\Options\Wri
 - 7-Zip、Bandizip、NanaZip、または PeaZip で展開されたファイルの MOTW:
 ![images/bandizip.png](images/bandizip.png)
 
-- Explzh、TC4Shell、または WinRAR で展開されたファイルの MOTW:
+- CubeICE, Explzh、TC4Shell、または WinRAR で展開されたファイルの MOTW:
 ![images/explzh.png](images/explzh.png)
 
 - Total Commander で展開されたファイルの MOTW:

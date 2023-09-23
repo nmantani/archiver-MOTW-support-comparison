@@ -22,34 +22,34 @@ To block macro of malicious Office document files that are extracted from archiv
 
 A question came up: **"What archiver software can propagate MOTW to extracted files?"** So I tested some archiver software and summarized the result.
 
-## Comparison table of MOTW propagation support (as of 19 September 2023)
-|Name|Tested version|License|MOTW propagation|Note|
-|----|--------------|-------|----------------|----|
-|"Extract all" built-in function of Windows Explorer|Windows 11 22H2<br>Windows 10 22H2|proprietary|Yes :heavy_check_mark:|MOTW bypass vulnerabilities (fixed) <a href="#*1">*1</a>|
-|[7-Zip](https://www.7-zip.org/)|23.01|GNU LGPL|Yes :heavy_check_mark:|Disabled by default <a href="#*2">*2</a>|
-|[Bandizip](https://en.bandisoft.com/bandizip/)|Standard Edition 7.32|freeware|Yes :heavy_check_mark:|MOTW bypass vulnerability (fixed) <a href="#*3">*3</a><br>Only for specific file extensions <a href="#*4">*4</a>|
-|[CubeICE](https://www.cube-soft.jp/cubeice/)|3.1.0|freeware / proprietary|Yes :heavy_check_mark:|MOTW bypass vulnerability (fixed) <a href="#*5">*5</a>|
-|[Explzh](https://www.ponsoftware.com/en/)|9.12|proprietary for commercial use|Yes :heavy_check_mark:||
-|[NanaZip](https://github.com/M2Team/NanaZip)|2.0.450.0|MIT|Yes :heavy_check_mark:|Disabled by default <a href="#*6">*6</a>|
-|[PeaZip](https://peazip.github.io/)|9.4.0|GNU LGPL|Yes :heavy_check_mark:||
-|[TC4Shell](https://www.tc4shell.com/)|21.3.0 (trial)|proprietary|Yes :heavy_check_mark:||
-|[Total Commander](https://www.ghisler.com/)|11.01 (trial)|proprietary|Yes :heavy_check_mark:||
-|[WinRAR](https://www.win-rar.com/)|6.24 beta 1 (trial)|proprietary|Yes :heavy_check_mark:|Only for specific file extensions <a href="#*7">*7</a>|
-|[WinZip](https://www.winzip.com/)|28.0 (trial)|proprietary|Yes :heavy_check_mark:|MOTW is propagated only if ZoneId value of the MOTW is 4 (Untrusted sites) <a href="#*8">*8</a>|
-|[Ashampoo ZIP Free](https://www.ashampoo.com/en-us/zip-free)|1.0.7|freeware (registration required)|No :x:||
-|[CAM UnZip](https://www.camunzip.com/)|5.22.6.0|proprietary for commercial use|No :x:||
-|Expand-Archive cmdlet of [PowerShell](https://github.com/PowerShell/PowerShell/)|7.3.6|MIT|No :x:||
-|[Express Zip](https://www.nchsoftware.com/zip/)|10.23|proprietary for commercial use|No :x:||
-|[File Compact](https://www.sourcenext.com/product/pc/oth/pc_oth_001267/)|7.02|proprietary|No :x:||
-|[IZArc](https://www.izarc.org/)|4.5|freeware|No :x:||
-|[LhaForge](https://claybird.sakura.ne.jp/garage/lhaforge/index.html)|1.6.7|MIT|No :x:||
-|[Lhaplus](http://hoehoe.com/)|1.74|freeware|No :x:||
-|[PowerArchiver](https://www.powerarchiver.com/)|22.00.09 (trial)|proprietary|No :x:||
-|[StuffIt Expander](https://stuffit.com/)|15.0.8|freeware|No :x:||
-|[tar.exe (bsdtar)](https://github.com/libarchive/libarchive) of Windows 11 and Windows 10|3.5.2|BSD 2-clause|No :x:||
-|[Universal Extractor 2](https://github.com/Bioruebe/UniExtract2)|2.0.0 RC 3|GNU GPLv2|No :x:||
-|[ZipGenious](https://zipgenius.com/)|6.3.2.3116|freeware|No :x:||
-|[Zipware](https://www.zipware.org/)|1.6|freeware|No :x:||
+## Comparison table of MOTW propagation support (as of 23 September 2023)
+|Name|Tested version|License|MOTW propagation|Enabled by default|Note|
+|----|--------------|-------|----------------|------------------|----|
+|"Extract all" built-in function of Windows Explorer|Windows 11 22H2<br>Windows 10 22H2|proprietary|Yes :heavy_check_mark:|Yes :heavy_check_mark:|MOTW bypass vulnerabilities (fixed) <a href="#*1">*1</a>|
+|[7-Zip](https://www.7-zip.org/)|23.01|GNU LGPL|Yes :heavy_check_mark:|No :x: <a href="#*2">*2</a>||
+|[Bandizip](https://en.bandisoft.com/bandizip/)|Standard Edition 7.32|freeware|Yes :heavy_check_mark:|Yes :heavy_check_mark:|MOTW bypass vulnerability (fixed) <a href="#*3">*3</a><br>Only for specific file extensions <a href="#*4">*4</a>|
+|[CubeICE](https://www.cube-soft.jp/cubeice/)|3.1.0|freeware / proprietary|Yes :heavy_check_mark:|Yes :heavy_check_mark:|MOTW bypass vulnerability (fixed) <a href="#*5">*5</a>|
+|[Explzh](https://www.ponsoftware.com/en/)|9.12|proprietary for commercial use|Yes :heavy_check_mark:|Yes :heavy_check_mark:||
+|[NanaZip](https://github.com/M2Team/NanaZip)|2.0.450.0|MIT|Yes :heavy_check_mark:|No :x: <a href="#*6">*6</a>||
+|[PeaZip](https://peazip.github.io/)|9.4.0|GNU LGPL|Yes :heavy_check_mark:|Yes :heavy_check_mark:||
+|[TC4Shell](https://www.tc4shell.com/)|21.3.0 (trial)|proprietary|Yes :heavy_check_mark:|Yes :heavy_check_mark:||
+|[Total Commander](https://www.ghisler.com/)|11.01 (trial)|proprietary|Yes :heavy_check_mark:|Yes :heavy_check_mark:||
+|[WinRAR](https://www.win-rar.com/)|6.24 beta 1 (trial)|proprietary|Yes :heavy_check_mark:|Yes :heavy_check_mark:|Only for specific file extensions <a href="#*7">*7</a>|
+|[WinZip](https://www.winzip.com/)|28.0 (trial)|proprietary|Yes :heavy_check_mark:|Yes :heavy_check_mark:|MOTW is propagated only if ZoneId value of the MOTW is 4 (Untrusted sites) <a href="#*8">*8</a>|
+|[Ashampoo ZIP Free](https://www.ashampoo.com/en-us/zip-free)|1.0.7|freeware (registration required)|No :x:|||
+|[CAM UnZip](https://www.camunzip.com/)|5.22.6.0|proprietary for commercial use|No :x:|||
+|Expand-Archive cmdlet of [PowerShell](https://github.com/PowerShell/PowerShell/)|7.3.6|MIT|No :x:|||
+|[Express Zip](https://www.nchsoftware.com/zip/)|10.23|proprietary for commercial use|No :x:|||
+|[File Compact](https://www.sourcenext.com/product/pc/oth/pc_oth_001267/)|7.02|proprietary|No :x:|||
+|[IZArc](https://www.izarc.org/)|4.5|freeware|No :x:|||
+|[LhaForge](https://claybird.sakura.ne.jp/garage/lhaforge/index.html)|1.6.7|MIT|No :x:|||
+|[Lhaplus](http://hoehoe.com/)|1.74|freeware|No :x:|||
+|[PowerArchiver](https://www.powerarchiver.com/)|22.00.09 (trial)|proprietary|No :x:|||
+|[StuffIt Expander](https://stuffit.com/)|15.0.8|freeware|No :x:|||
+|[tar.exe (bsdtar)](https://github.com/libarchive/libarchive) of Windows 11 and Windows 10|3.5.2|BSD 2-clause|No :x:|||
+|[Universal Extractor 2](https://github.com/Bioruebe/UniExtract2)|2.0.0 RC 3|GNU GPLv2|No :x:|||
+|[ZipGenious](https://zipgenius.com/)|6.3.2.3116|freeware|No :x:|||
+|[Zipware](https://www.zipware.org/)|1.6|freeware|No :x:|||
 
 <a id="*1">*1</a>: There were two MOTW bypass vulnerabilities of Windows and they were fixed by the security updates released on 8 November 2022.
 - [CVE-2022-41049](https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2022-41049) ([Twitter thread](https://twitter.com/wdormann/status/1544431763358875648) by Will Dormann ([@wdormann](https://twitter.com/wdormann)) and [detailed writeup](https://breakdev.org/zip-motw-bug-analysis/) by Kuba Gretzky ([@mrgretzky](https://twitter.com/mrgretzky)))

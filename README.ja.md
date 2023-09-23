@@ -31,11 +31,11 @@
 |[CubeICE](https://www.cube-soft.jp/cubeice/)|3.1.0|フリーウェア(有償版もあり)|する :heavy_check_mark:|有効 :heavy_check_mark:|MOTW バイパスの脆弱性(修正済) <a href="#*5">*5</a>|
 |[Explzh](https://www.ponsoftware.com/en/)|9.12|商用利用は有償|する :heavy_check_mark:|有効 :heavy_check_mark:||
 |[NanaZip](https://github.com/M2Team/NanaZip)|2.0.450.0|MIT|する :heavy_check_mark:|無効 :x: <a href="#*6">*6</a>||
-|[PeaZip](https://peazip.github.io/)|9.4.0|GNU LGPL|する :heavy_check_mark:|する :heavy_check_mark:||
-|[TC4Shell](https://www.tc4shell.com/)|21.3.0 (試用版)|有償|する :heavy_check_mark:|する :heavy_check_mark:||
-|[Total Commander](https://www.ghisler.com/)|11.01 (試用版)|有償|する :heavy_check_mark:|する :heavy_check_mark:||
-|[WinRAR](https://www.win-rar.com/)|6.24 beta 1 (試用版)|有償|する :heavy_check_mark:|する :heavy_check_mark:|特定のファイル拡張子のみ <a href="#*7">*7</a>|
-|[WinZip](https://www.winzip.com/)|28.0 (試用版)|有償|する :heavy_check_mark:|する :heavy_check_mark:|ZoneId の値が 4 (信頼されていないサイト) の場合のみ <a href="#*8">*8</a>|
+|[PeaZip](https://peazip.github.io/)|9.4.0|GNU LGPL|する :heavy_check_mark:|有効 :heavy_check_mark:||
+|[TC4Shell](https://www.tc4shell.com/)|21.3.0 (試用版)|有償|する :heavy_check_mark:|有効 :heavy_check_mark:||
+|[Total Commander](https://www.ghisler.com/)|11.01 (試用版)|有償|する :heavy_check_mark:|有効 :heavy_check_mark:||
+|[WinRAR](https://www.win-rar.com/)|6.24 beta 1 (試用版)|有償|する :heavy_check_mark:|有効 :heavy_check_mark:|特定のファイル拡張子のみ <a href="#*7">*7</a>|
+|[WinZip](https://www.winzip.com/)|28.0 (試用版)|有償|する :heavy_check_mark:|有効 :heavy_check_mark:|ZoneId の値が 4 (信頼されていないサイト) の場合のみ <a href="#*8">*8</a>|
 |[Ashampoo ZIP Free](https://www.ashampoo.com/en-us/zip-free)|1.0.7|フリーウェア (登録が必要)|しない :x:|||
 |[CAM UnZip](https://www.camunzip.com/)|5.22.6.0|商用利用は有償|しない :x:|||
 |[PowerShell](https://github.com/PowerShell/PowerShell/) の Expand-Archive コマンドレット|7.3.6|MIT|しない :x:|||

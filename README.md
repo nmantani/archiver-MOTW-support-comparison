@@ -22,31 +22,31 @@ To block macro of malicious Office document files that are extracted from archiv
 
 A question came up: **"What archiver software can propagate MOTW to extracted files?"** So I tested some archiver software and summarized the result.
 
-## Comparison table of MOTW propagation support (as of 23 September 2023)
+## Comparison table of MOTW propagation support (as of 11 February 2024)
 |Name|Tested version|License|MOTW propagation|Enabled by default|Note|
 |----|--------------|-------|----------------|------------------|----|
 |"Extract all" built-in function of Windows Explorer|Windows 11 22H2<br>Windows 10 22H2|proprietary|Yes :heavy_check_mark:|Yes :heavy_check_mark:|MOTW bypass vulnerabilities (fixed) <a href="#*1">*1</a>|
 |[7-Zip](https://www.7-zip.org/)|23.01|GNU LGPL|Yes :heavy_check_mark:|No :x: <a href="#*2">*2</a>||
 |[Bandizip](https://en.bandisoft.com/bandizip/)|Standard Edition 7.32|freeware|Yes :heavy_check_mark:|Yes :heavy_check_mark:|MOTW bypass vulnerability (fixed) <a href="#*3">*3</a><br>Only for specific file extensions <a href="#*4">*4</a>|
-|[CubeICE](https://www.cube-soft.jp/cubeice/)|3.1.0|freeware / proprietary|Yes :heavy_check_mark:|Yes :heavy_check_mark:|MOTW bypass vulnerability (fixed) <a href="#*5">*5</a>|
-|[Explzh](https://www.ponsoftware.com/en/)|9.12|proprietary for commercial use|Yes :heavy_check_mark:|Yes :heavy_check_mark:||
+|[CubeICE](https://www.cube-soft.jp/cubeice/)|3.2.0|freeware / proprietary|Yes :heavy_check_mark:|Yes :heavy_check_mark:|MOTW bypass vulnerability (fixed) <a href="#*5">*5</a>|
+|[Explzh](https://www.ponsoftware.com/en/)|9.31|proprietary for commercial use|Yes :heavy_check_mark:|Yes :heavy_check_mark:||
 |[NanaZip](https://github.com/M2Team/NanaZip)|2.0.450.0|MIT|Yes :heavy_check_mark:|No :x: <a href="#*6">*6</a>||
-|[PeaZip](https://peazip.github.io/)|9.4.0|GNU LGPL|Yes :heavy_check_mark:|Yes :heavy_check_mark:||
+|[PeaZip](https://peazip.github.io/)|9.7.0|GNU LGPL|Yes :heavy_check_mark:|Yes :heavy_check_mark:||
 |[TC4Shell](https://www.tc4shell.com/)|21.3.0 (trial)|proprietary|Yes :heavy_check_mark:|Yes :heavy_check_mark:||
-|[Total Commander](https://www.ghisler.com/)|11.01 (trial)|proprietary|Yes :heavy_check_mark:|Yes :heavy_check_mark:||
-|[WinRAR](https://www.win-rar.com/)|6.24 beta 1 (trial)|proprietary|Yes :heavy_check_mark:|Yes :heavy_check_mark:|Only for specific file extensions <a href="#*7">*7</a>|
+|[Total Commander](https://www.ghisler.com/)|11.02 (trial)|proprietary|Yes :heavy_check_mark:|Yes :heavy_check_mark:||
+|[WinRAR](https://www.win-rar.com/)|6.24 (trial)|proprietary|Yes :heavy_check_mark:|Yes :heavy_check_mark:|Only for specific file extensions <a href="#*7">*7</a>|
 |[WinZip](https://www.winzip.com/)|28.0 (trial)|proprietary|Yes :heavy_check_mark:|Yes :heavy_check_mark:|MOTW is propagated only if ZoneId value of the MOTW is 4 (Untrusted sites) <a href="#*8">*8</a>|
 |[Ashampoo ZIP Free](https://www.ashampoo.com/en-us/zip-free)|1.0.7|freeware (registration required)|No :x:|||
 |[CAM UnZip](https://www.camunzip.com/)|5.22.6.0|proprietary for commercial use|No :x:|||
-|Expand-Archive cmdlet of [PowerShell](https://github.com/PowerShell/PowerShell/)|7.3.6|MIT|No :x:|||
-|[Express Zip](https://www.nchsoftware.com/zip/)|10.23|proprietary for commercial use|No :x:|||
+|Expand-Archive cmdlet of [PowerShell](https://github.com/PowerShell/PowerShell/)|7.4.1|MIT|No :x:|||
+|[Express Zip](https://www.nchsoftware.com/zip/)|11.00|proprietary for commercial use|No :x:|||
 |[File Compact](https://www.sourcenext.com/product/pc/oth/pc_oth_001267/)|7.02|proprietary|No :x:|||
 |[IZArc](https://www.izarc.org/)|4.5|freeware|No :x:|||
 |[LhaForge](https://claybird.sakura.ne.jp/garage/lhaforge/index.html)|1.6.7|MIT|No :x:|||
 |[Lhaplus](http://hoehoe.com/)|1.74|freeware|No :x:|||
 |[PowerArchiver](https://www.powerarchiver.com/)|22.00.09 (trial)|proprietary|No :x:|||
 |[StuffIt Expander](https://stuffit.com/)|15.0.8|freeware|No :x:|||
-|[tar.exe (bsdtar)](https://github.com/libarchive/libarchive) of Windows 11 and Windows 10|3.5.2|BSD 2-clause|No :x:|||
+|[tar.exe (bsdtar)](https://github.com/libarchive/libarchive) of Windows 11|3.6.2|BSD 2-clause|No :x:|||
 |[Universal Extractor 2](https://github.com/Bioruebe/UniExtract2)|2.0.0 RC 3|GNU GPLv2|No :x:|||
 |[ZipGenious](https://zipgenius.com/)|6.3.2.3116|freeware|No :x:|||
 |[Zipware](https://www.zipware.org/)|1.6|freeware|No :x:|||
@@ -95,19 +95,19 @@ I previously tested WinRAR with a ZIP archive file that contained only text file
 
 <a id="*8">*8</a>: WinZip removes MOTW from archive files on extraction if the ZoneId value of the MOTW is 3 (Internet). This behavior was introduced in version 28.0.
 
-## Comparison table of MOTW propagation behavior (as of 19 September 2023)
+## Comparison table of MOTW propagation behavior (as of 11 February 2024)
 |Name|Tested version|MOTW propagation behavior|
 |----|--------------|-------------------------|
 |"Extract all" built-in function of Windows Explorer|Windows 11 22H2<br>Windows 10 22H2|<ul><li>MOTW is propagated only if ZoneId value of the MOTW is 3 (Internet) or 4 (Untrusted sites)</li><li>ZoneId field of the archive file is inherited</li><li>The absolute path of the archive file is set for the ReferrerUrl field</li><li>All other fields are ignored</li></ul>|
 |[7-Zip](https://www.7-zip.org/)|23.01|<ul><li>MOTW of the archive file is propagated without modification</li><li>Only for specific file extensions if the "Propagate Zone Id stream:" option is set to "For Office files" <a href="#*2">*2</a></li></ul>|
 |[Bandizip](https://en.bandisoft.com/bandizip/)|Standard Edition 7.32|<ul><li>MOTW of the archive file is propagated without modification</li><li>Only for specific file extensions <a href="#*4">*4</a></li></ul>|
-|[CubeICE](https://www.cube-soft.jp/cubeice/)|3.1.0|<ul><li>MOTW is propagated only if ZoneId value of the MOTW is 3 (Internet) or 4 (Untrusted sites)</li><li>Only ZoneId field of the archive file is inherited and all other fields are ignored</li></ul>|
-|[Explzh](https://www.ponsoftware.com/en/)|9.12|<ul><li>MOTW is propagated only if ZoneId value of the MOTW is 3 (Internet)</li><li>Only ZoneId field of the archive file is inherited and all other fields are ignored</li></ul>|
+|[CubeICE](https://www.cube-soft.jp/cubeice/)|3.2.0|<ul><li>MOTW is propagated only if ZoneId value of the MOTW is 3 (Internet) or 4 (Untrusted sites)</li><li>Only ZoneId field of the archive file is inherited and all other fields are ignored</li></ul>|
+|[Explzh](https://www.ponsoftware.com/en/)|9.31|<ul><li>MOTW is propagated only if ZoneId value of the MOTW is 3 (Internet)</li><li>Only ZoneId field of the archive file is inherited and all other fields are ignored</li></ul>|
 |[NanaZip](https://github.com/M2Team/NanaZip)|2.0.450.0|<ul><li>MOTW of the archive file is propagated without modification</li><li>Only for specific file extensions if the "Propagate Zone Id stream:" option is set to "For Office files" <a href="#*6">*6</a></li></ul>|
-|[PeaZip](https://peazip.github.io/)|9.4.0|<ul><li>MOTW of the archive file is propagated without modification</li></ul>|
+|[PeaZip](https://peazip.github.io/)|9.7.0|<ul><li>MOTW of the archive file is propagated without modification</li></ul>|
 |[TC4Shell](https://www.tc4shell.com/)|21.3.0 (trial)|<ul><li>Only ZoneId field of the archive file is inherited and all other fields are ignored</li></ul>|
-|[Total Commander](https://www.ghisler.com/)|10.52 (trial)|<ul><li>MOTW of the archive file is propagated except for the ReferrerUrl field</li></ul>|
-|[WinRAR](https://www.win-rar.com/)|6.24 beta 1 (trial)|<ul><li>Only ZoneId field of the archive file is inherited and all other fields are ignored</li><li>Only for specific file extensions <a href="#*7">*7</a></li></ul>|
+|[Total Commander](https://www.ghisler.com/)|11.02 (trial)|<ul><li>MOTW of the archive file is propagated except for the ReferrerUrl field</li></ul>|
+|[WinRAR](https://www.win-rar.com/)|6.24 (trial)|<ul><li>Only ZoneId field of the archive file is inherited and all other fields are ignored</li><li>Only for specific file extensions <a href="#*7">*7</a></li></ul>|
 |[WinZip](https://www.winzip.com/)|28.0 (trial)|<ul><li>MOTW is propagated only if ZoneId value of the MOTW is 4 (Untrusted sites)</li><li>ZoneId field of the archive file is inherited</li><li>The absolute path of the archive file is set for the ReferrerUrl field</li><li>All other fields are ignored</li><li>MOTW is removed from archives files on extraction if the ZoneId value of the MOTW is 3 (Internet)<a href="#*8">*8</a></li></ul>|
 
 ### MOTW propagation examples

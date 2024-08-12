@@ -22,32 +22,32 @@
 
 ここで一つの疑問が思い浮かびました。**「どの圧縮展開ソフトウェアが展開したファイルに MOTW を伝播させるんだろう?」** そこで私はいくつかの圧縮展開ソフトウェアをテストしてその結果をまとめました。
 
-## MOTW 伝播のサポートの比較表 (2024年2月11日時点)
+## MOTW 伝播のサポートの比較表 (2024年8月12日時点)
 |名称|テストしたバージョン|ライセンス|MOTWの伝播|デフォルトで有効|備考|
 |----|----------------|--------|---------|--------------|----|
-|Windowsのエクスプローラの「すべて展開」|Windows 11 22H2<br>Windows 10 22H2|有償|する :heavy_check_mark:|有効 :heavy_check_mark:|MOTW バイパスの脆弱性(修正済) <a href="#*1">*1</a>|
-|[7-Zip](https://www.7-zip.org/)|23.01|GNU LGPL|する :heavy_check_mark:|無効 :x: <a href="#*2">*2</a>||
-|[Bandizip](https://en.bandisoft.com/bandizip/)|Standard Edition 7.32|フリーウェア|する :heavy_check_mark:|有効 :heavy_check_mark:|MOTW バイパスの脆弱性(修正済) <a href="#*3">*3</a><br>特定のファイル拡張子のみ <a href="#*4">*4</a>|
-|[CubeICE](https://www.cube-soft.jp/cubeice/)|3.2.0|フリーウェア(有償版もあり)|する :heavy_check_mark:|有効 :heavy_check_mark:|MOTW バイパスの脆弱性(修正済) <a href="#*5">*5</a>|
-|[Explzh](https://www.ponsoftware.com/en/)|9.31|商用利用は有償|する :heavy_check_mark:|有効 :heavy_check_mark:||
-|[NanaZip](https://github.com/M2Team/NanaZip)|2.0.450.0|MIT|する :heavy_check_mark:|無効 :x: <a href="#*6">*6</a>||
-|[PeaZip](https://peazip.github.io/)|9.7.0|GNU LGPL|する :heavy_check_mark:|有効 :heavy_check_mark:||
+|Windowsのエクスプローラの「すべて展開」|Windows 11 23H2<br>Windows 10 22H2|有償|する :heavy_check_mark:|有効 :heavy_check_mark:|MOTW バイパスの脆弱性(修正済) <a href="#*1">*1</a>|
+|[7-Zip](https://www.7-zip.org/)|24.08|GNU LGPL|する :heavy_check_mark:|無効 :x: <a href="#*2">*2</a>||
+|[Bandizip](https://en.bandisoft.com/bandizip/)|Standard Edition 7.36|フリーウェア|する :heavy_check_mark:|有効 :heavy_check_mark:|MOTW バイパスの脆弱性(修正済) <a href="#*3">*3</a><br>特定のファイル拡張子のみ <a href="#*4">*4</a>|
+|[CubeICE](https://www.cube-soft.jp/cubeice/)|3.4.0|フリーウェア(有償版もあり)|する :heavy_check_mark:|有効 :heavy_check_mark:|MOTW バイパスの脆弱性(修正済) <a href="#*5">*5</a>|
+|[Explzh](https://www.ponsoftware.com/en/)|9.48|商用利用は有償|する :heavy_check_mark:|有効 :heavy_check_mark:||
+|[NanaZip](https://github.com/M2Team/NanaZip)|3.0.1000.0|MIT|する :heavy_check_mark:|無効 :x: <a href="#*6">*6</a>||
+|[PeaZip](https://peazip.github.io/)|9.9.0|GNU LGPL|する :heavy_check_mark:|有効 :heavy_check_mark:||
 |[TC4Shell](https://www.tc4shell.com/)|21.3.0 (試用版)|有償|する :heavy_check_mark:|有効 :heavy_check_mark:||
-|[Total Commander](https://www.ghisler.com/)|11.02 (試用版)|有償|する :heavy_check_mark:|有効 :heavy_check_mark:||
-|[WinRAR](https://www.win-rar.com/)|6.24 (試用版)|有償|する :heavy_check_mark:|有効 :heavy_check_mark:|特定のファイル拡張子のみ <a href="#*7">*7</a>|
-|[WinZip](https://www.winzip.com/)|28.0 (試用版)|有償|する :heavy_check_mark:|有効 :heavy_check_mark:|ZoneId の値が 4 (信頼されていないサイト) の場合のみ <a href="#*8">*8</a>|
+|[Total Commander](https://www.ghisler.com/)|11.03 (試用版)|有償|する :heavy_check_mark:|有効 :heavy_check_mark:||
+|[WinRAR](https://www.win-rar.com/)|7.01 (試用版)|有償|する :heavy_check_mark:|有効 :heavy_check_mark:|特定のファイル拡張子のみ <a href="#*7">*7</a>|
+|[WinZip](https://www.winzip.com/)|76.8 (試用版)|有償|する :heavy_check_mark:|有効 :heavy_check_mark:||
 |[Ashampoo ZIP Free](https://www.ashampoo.com/en-us/zip-free)|1.0.7|フリーウェア (登録が必要)|しない :x:|||
 |[CAM UnZip](https://www.camunzip.com/)|5.22.6.0|商用利用は有償|しない :x:|||
-|[PowerShell](https://github.com/PowerShell/PowerShell/) の Expand-Archive コマンドレット|7.4.1|MIT|しない :x:|||
-|[Express Zip](https://www.nchsoftware.com/zip/)|11.00|商用利用は有償|しない :x:|||
+|[PowerShell](https://github.com/PowerShell/PowerShell/) の Expand-Archive コマンドレット|7.4.4|MIT|しない :x:|||
+|[Express Zip](https://www.nchsoftware.com/zip/)|11.13|商用利用は有償|しない :x:|||
 |[IZArc](https://www.izarc.org/)|4.5|フリーウェア|しない :x:|||
 |[LhaForge](https://claybird.sakura.ne.jp/garage/lhaforge/index.html)|1.6.7|MIT|しない :x:|||
 |[Lhaplus](http://hoehoe.com/)|1.74|フリーウェア|しない :x:|||
 |[PowerArchiver](https://www.powerarchiver.com/)|22.00.09 (試用版)|有償|しない :x:|||
 |[StuffIt Expander](https://stuffit.com/)|15.0.8|フリーウェア|しない :x:|||
-|Windows 11の [tar.exe (bsdtar)](https://github.com/libarchive/libarchive)|3.6.2|BSD 2-clause|しない :x:|||
+|Windows 11の [tar.exe (bsdtar)](https://github.com/libarchive/libarchive)|3.7.2|BSD 2-clause|しない :x:|||
 |[Universal Extractor 2](https://github.com/Bioruebe/UniExtract2)|2.0.0 RC 3|GNU GPLv2|しない :x:|||
-|[ZipGenious](https://zipgenius.com/)|6.3.2.3116|フリーウェア|しない :x:|||
+|[ZipGenious](https://zipgenius.it/en/)|6.3.2.3116|フリーウェア|しない :x:|||
 |[Zipware](https://www.zipware.org/)|1.6|フリーウェア|しない :x:|||
 |[ファイルコンパクト](https://www.sourcenext.com/product/pc/oth/pc_oth_001267/)|7.02|有償|しない :x:|||
 
@@ -93,27 +93,25 @@ MOTW の伝播はレジストリの HKEY_CURRENT_USER\SOFTWARE\7-Zip\Options\Wri
 
 私は以前にテキストファイルのみを含む ZIP ファイルで Bandizip WinRAR が MOTW を伝播しないと誤解していました。
 
-<a id="*8">*8</a>: 圧縮ファイルの MOTW の ZoneId の値が 3 (インターネット)である場合に、WinZip は展開する圧縮ファイルの MOTW を削除します。この動作はバージョン28.0で導入されました。
-
-## MOTW 伝播の動作の比較表 (2024年2月11日時点)
+## MOTW 伝播の動作の比較表 (2024年8月12日時点)
 |名称|テストしたバージョン|MOTW 伝播の動作|
 |----|--------------|-------------------------|
-|Windowsのエクスプローラの「すべて展開」|Windows 11 22H2<br>Windows 10 22H2|<ul><li>MOTW は ZoneId の値が 3 (インターネット) または 4 (信頼されていないサイト) の場合にのみ伝播されます。</li><li>圧縮ファイルの ZoneId のフィールドが引き継がれます。</li><li>圧縮ファイルの絶対パスが ReferrerUrl のフィールドに設定されます。</li><li>他のフィールドは全て無視されます。</li></ul>|
-|[7-Zip](https://www.7-zip.org/)|23.01|<ul><li>圧縮ファイルの MOTW はそのまま伝播されます。</li><li>「Zone.Id ストリームの伝達:」の設定を「Office ファイルの場合」に設定した場合は特定のファイル拡張子のファイルにのみ伝播されます。 <a href="#*2">*2</a></li></ul>|
-|[Bandizip](https://en.bandisoft.com/bandizip/)|Standard Edition 7.32|<ul><li>圧縮ファイルの MOTW はそのまま伝播されます。</li><li>特定のファイル拡張子のファイルにのみ伝播されます。  <a href="#*4">*4</a></li></ul>|
-|[CubeICE](https://www.cube-soft.jp/cubeice/)|3.2.0|<ul><li>MOTW は ZoneId の値が 3 (インターネット) または 4 (信頼されていないサイト) の場合にのみ伝播されます。</li><li>ZoneId のフィールドのみが引き継がれて他のフィールドは全て無視されます。</li></ul>|
-|[Explzh](https://www.ponsoftware.com/en/)|9.31|<ul><li>MOTW は ZoneId の値が 3 (インターネット) の場合にのみ伝播されます。</li><li>ZoneId のフィールドのみが引き継がれて他のフィールドは全て無視されます。</li></ul>|
-|[NanaZip](https://github.com/M2Team/NanaZip)|2.0.450.0|<ul><li>圧縮ファイルの MOTW はそのまま伝播されます。</li><li>「Zone.Id ストリームの伝達:」の設定を「Office ファイルの場合」に設定した場合は特定のファイル拡張子のファイルにのみ伝播されます。 <a href="#*6">*6</a></li></ul>|
-|[PeaZip](https://peazip.github.io/)|9.7.0|<ul><li>圧縮ファイルの MOTW はそのまま伝播されます。</li></ul>|
+|Windowsのエクスプローラの「すべて展開」|Windows 11 23H2<br>Windows 10 22H2|<ul><li>MOTW は ZoneId の値が 3 (インターネット) または 4 (信頼されていないサイト) の場合にのみ伝播されます。</li><li>圧縮ファイルの ZoneId のフィールドが引き継がれます。</li><li>圧縮ファイルの絶対パスが ReferrerUrl のフィールドに設定されます。</li><li>他のフィールドは全て無視されます。</li></ul>|
+|[7-Zip](https://www.7-zip.org/)|24.08|<ul><li>圧縮ファイルの MOTW はそのまま伝播されます。</li><li>「Zone.Id ストリームの伝達:」の設定を「Office ファイルの場合」に設定した場合は特定のファイル拡張子のファイルにのみ伝播されます。 <a href="#*2">*2</a></li></ul>|
+|[Bandizip](https://en.bandisoft.com/bandizip/)|Standard Edition 7.36|<ul><li>圧縮ファイルの MOTW はそのまま伝播されます。</li><li>特定のファイル拡張子のファイルにのみ伝播されます。  <a href="#*4">*4</a></li></ul>|
+|[CubeICE](https://www.cube-soft.jp/cubeice/)|3.4.0|<ul><li>MOTW は ZoneId の値が 3 (インターネット) または 4 (信頼されていないサイト) の場合にのみ伝播されます。</li><li>ZoneId のフィールドのみが引き継がれて他のフィールドは全て無視されます。</li></ul>|
+|[Explzh](https://www.ponsoftware.com/en/)|9.48|<ul><li>MOTW は ZoneId の値が 3 (インターネット) の場合にのみ伝播されます。</li><li>ZoneId のフィールドのみが引き継がれて他のフィールドは全て無視されます。</li></ul>|
+|[NanaZip](https://github.com/M2Team/NanaZip)|3.0.1000.0|<ul><li>圧縮ファイルの MOTW はそのまま伝播されます。</li><li>「Zone.Id ストリームの伝達:」の設定を「Office ファイルの場合」に設定した場合は特定のファイル拡張子のファイルにのみ伝播されます。 <a href="#*6">*6</a></li></ul>|
+|[PeaZip](https://peazip.github.io/)|9.9.0|<ul><li>圧縮ファイルの MOTW はそのまま伝播されます。</li></ul>|
 |[TC4Shell](https://www.tc4shell.com/)|21.3.0 (試用版)|<ul><li>ZoneId のフィールドのみが引き継がれて他のフィールドは全て無視されます。</li></ul>|
-|[Total Commander](https://www.ghisler.com/)|11.02 (試用版)|<ul><li>ReferrerUrl のフィールドを除いて圧縮ファイルの MOTW はそのまま伝播されます。</li></ul>|
-|[WinRAR](https://www.win-rar.com/)|6.24 (試用版)|<ul><li>ZoneId のフィールドのみが引き継がれて他のフィールドは全て無視されます。</li><li>特定のファイル拡張子のファイルにのみ伝播されます。 <a href="#*7">*7</a></li></ul>|
-|[WinZip](https://www.winzip.com/)|28.0 (試用版)|<ul><li>MOTW は ZoneId の値が 4 (信頼されていないサイト) の場合にのみ伝播されます。</li><li>圧縮ファイルの ZoneId のフィールドが引き継がれます。</li><li>圧縮ファイルの絶対パスが ReferrerUrl のフィールドに設定されます。</li><li>他のフィールドは全て無視されます。</li><li>MOTW の ZoneId の値が 3 (インターネット)である場合は圧縮ファイルの MOTW を削除します。<a href="#*8">*8</a></li></ul>|
+|[Total Commander](https://www.ghisler.com/)|11.03 (試用版)|<ul><li>ReferrerUrl のフィールドを除いて圧縮ファイルの MOTW はそのまま伝播されます。</li></ul>|
+|[WinRAR](https://www.win-rar.com/)|7.01 (試用版)|<ul><li>ZoneId のフィールドのみが引き継がれて他のフィールドは全て無視されます。</li><li>特定のファイル拡張子のファイルにのみ伝播されます。 <a href="#*7">*7</a></li></ul>|
+|[WinZip](https://www.winzip.com/)|76.8 (試用版)|<ul><li>MOTW は ZoneId の値が 3 (インターネット)の場合にのみ伝播されます。</li><li>圧縮ファイルの ZoneId のフィールドが引き継がれます。</li><li>圧縮ファイルの絶対パスが ReferrerUrl のフィールドに設定されます。</li><li>他のフィールドは全て無視されます。</li></ul>|
 
 ### MOTW 伝播の例
 これらの例では、MOTW が Set-MOTW.ps1 で motw-test.zip の ZIP ファイルに手動でセットされ、続いて展開されたファイルの MOTW が Get-MOTW.ps1 で表示されています。Set-MOTW.ps1 と Get-MOTW.ps1 は私の [PS-MOTW](https://github.com/nmantani/PS-MOTW) のリポジトリで公開しています。
 
-- Windows のエクスプローラまたは WinZip (バージョン27.0以前) で展開されたファイルの MOTW:
+- Windows のエクスプローラまたは WinZip (バージョン28.0を除く) で展開されたファイルの MOTW:
 ![images/explorer.png](images/explorer.png)
 
 - 7-Zip、Bandizip、NanaZip、または PeaZip で展開されたファイルの MOTW:

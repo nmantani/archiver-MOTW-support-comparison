@@ -34,7 +34,7 @@
 |[PeaZip](https://peazip.github.io/)|9.9.0|GNU LGPL|する :heavy_check_mark:|有効 :heavy_check_mark:||
 |[TC4Shell](https://www.tc4shell.com/)|21.3.0 (試用版)|有償|する :heavy_check_mark:|有効 :heavy_check_mark:||
 |[Total Commander](https://www.ghisler.com/)|11.03 (試用版)|有償|する :heavy_check_mark:|有効 :heavy_check_mark:||
-|[WinRAR](https://www.win-rar.com/)|7.01 (試用版)|有償|する :heavy_check_mark:|有効 :heavy_check_mark:|特定のファイル拡張子のみ <a href="#*7">*7</a>|
+|[WinRAR](https://www.win-rar.com/)|7.01 (試用版)|有償|する :heavy_check_mark:|有効 :heavy_check_mark:|デフォルトは特定のファイル拡張子のみ <a href="#*7">*7</a>|
 |[WinZip](https://www.winzip.com/)|76.8 (試用版)|有償|する :heavy_check_mark:|有効 :heavy_check_mark:||
 |[Ashampoo ZIP Free](https://www.ashampoo.com/en-us/zip-free)|1.0.7|フリーウェア (登録が必要)|しない :x:|||
 |[CAM UnZip](https://www.camunzip.com/)|5.22.6.0|商用利用は有償|しない :x:|||
@@ -89,9 +89,29 @@ MOTW の伝播はレジストリの HKEY_CURRENT_USER\SOFTWARE\7-Zip\Options\Wri
 - .pot .potm .potx .ppa .ppam .pps .ppsm .ppsx .ppt .pptm .pptx .sldm .sldx
 - .xla .xlam .xlm .xls .xlsb .xlsm .xlsx .xlt .xltm .xltx
 
-<a id="*7">*7</a>: Jernej Simončič 氏 ([@jernej__s](https://twitter.com/jernej__s)) がご親切に WinRAR の開発元に問い合わせて、WinRAR は Microsoft Office ドキュメントファイルにのみ MOTW を伝播する、という[回答](https://github.com/nmantani/archiver-MOTW-support-comparison/issues/1)を得てくださいました。サポートしているファイル拡張子はドキュメントに記載されていないようです。私は WinRAR 6.11 で追加のテストを行って、Word、Excel、PowerPoint のファイル (Access と Publisher は未対応) に MOTW を伝播することを確認しました。
+<a id="*7">*7</a>: WinRAR 7.0で"Propagate Mark of the Web"のオプションが導入されました。以下の値から選択できます:
+- 削除しない(「伝播しない」の誤り?、英語版では"Never")
+- Officeファイル用
+- 実行ファイルとOfficeファイル用
+- 全ファイル用
+- ユーザー定義された種類用
 
-私は以前にテキストファイルのみを含む ZIP ファイルで Bandizip WinRAR が MOTW を伝播しないと誤解していました。
+このオプションはWinRARのGUIでのみサポートされています。WinRARのCLIはオプションの設定に関係なくMOTWの伝播をしません。
+
+![images/winrar-setting.png](images/winrar-setting.png)
+
+デフォルトは「実行ファイルとOfficeファイル用」で、WinRARは以下のファイル拡張子のファイルにMOTWを伝播します:
+- .exe .bat .cmd .hta .lnk .msi .pif .ps1 .scr .vbs
+- .doc .docb .docm .docx .dot .dotm .dotx .wbk
+- .ppa .ppam .pot .potm .potx .pps .ppsm .ppsx .ppt .pptm .pptx .sldm .sldx
+- .xls .xlsb .xlsm .xlsx .xlm .xlt .xltm .xltx
+
+「Officeファイル用」に設定すると、WinRARは以下のファイル拡張子のファイルにMOTWを伝播します:
+- .doc .docb .docm .docx .dot .dotm .dotx .wbk
+- .ppa .ppam .pot .potm .potx .pps .ppsm .ppsx .ppt .pptm .pptx .sldm .sldx
+- .xls .xlsb .xlsm .xlsx .xlm .xlt .xltm .xltx
+
+「ユーザー定義された種類用」に設定するとファイル拡張子を指定できます。
 
 ## MOTW 伝播の動作の比較表 (2024年8月12日時点)
 |名称|テストしたバージョン|MOTW 伝播の動作|

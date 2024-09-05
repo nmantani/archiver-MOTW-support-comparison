@@ -34,7 +34,7 @@ A question came up: **"What archiver software can propagate MOTW to extracted fi
 |[PeaZip](https://peazip.github.io/)|9.9.0|GNU LGPL|Yes :heavy_check_mark:|Yes :heavy_check_mark:||
 |[TC4Shell](https://www.tc4shell.com/)|21.3.0 (trial)|proprietary|Yes :heavy_check_mark:|Yes :heavy_check_mark:||
 |[Total Commander](https://www.ghisler.com/)|11.03 (trial)|proprietary|Yes :heavy_check_mark:|Yes :heavy_check_mark:||
-|[WinRAR](https://www.win-rar.com/)|7.01 (trial)|proprietary|Yes :heavy_check_mark:|Yes :heavy_check_mark:|Only for specific file extensions <a href="#*7">*7</a>|
+|[WinRAR](https://www.win-rar.com/)|7.01 (trial)|proprietary|Yes :heavy_check_mark:|Yes :heavy_check_mark:|Only for specific file extensions by default <a href="#*7">*7</a>|
 |[WinZip](https://www.winzip.com/)|76.8 (trial)|proprietary|Yes :heavy_check_mark:|Yes :heavy_check_mark:||
 |[Ashampoo ZIP Free](https://www.ashampoo.com/en-us/zip-free)|1.0.7|freeware (registration required)|No :x:|||
 |[CAM UnZip](https://www.camunzip.com/)|5.22.6.0|proprietary for commercial use|No :x:|||
@@ -59,7 +59,7 @@ A question came up: **"What archiver software can propagate MOTW to extracted fi
 
 ![images/7-zip-setting.png](images/7-zip-setting.png)
 
-When you set the option to Yes, 7-Zip propagate MOTW to all extracted files. When you set it to "For Office files", 7-Zip propagate MOTW to files with the following file extensions:
+When you set the option to Yes, 7-Zip propagates MOTW to all extracted files. When you set it to "For Office files", 7-Zip propagates MOTW to files with the following file extensions:
 - .doc .docb .docm .docx .dot .dotm .dotx .wbk .wll .wwl
 - .pot .potm .potx .ppa .ppam .pps .ppsm .ppsx .ppt .pptm .pptx .sldm .sldx
 - .xla .xlam .xlm .xls .xlsb .xlsm .xlsx .xlt .xltm .xltx
@@ -89,9 +89,29 @@ When you set the option to Yes, NanaZip propagate MOTW to all extracted files. W
 - .pot .potm .potx .ppa .ppam .pps .ppsm .ppsx .ppt .pptm .pptx .sldm .sldx
 - .xla .xlam .xlm .xls .xlsb .xlsm .xlsx .xlt .xltm .xltx
 
-<a id="*7">*7</a>: Jernej Simončič ([@jernej__s](https://twitter.com/jernej__s)) kindly contacted the developer of WinRAR and got [the answer](https://github.com/nmantani/archiver-MOTW-support-comparison/issues/1) that WinRAR propagates MOTW only to Microsoft Office document files. It seems that the supported file types are not documented. I did additional tests with WinRAR 6.11 and confirmed that it propagates MOTW to document files of Word, Excel, and PowerPoint (files of Access and Publisher are not supported).
+<a id="*7">*7</a>: WinRAR 7.0 introduced the "Propagate Mark of the Web" option. You can choose the following values:
+- Never
+- For office files
+- For executable and office files
+- For all files
+- For user defined types
 
-I previously tested WinRAR with a ZIP archive file that contained only text files, and I misunderstood that WinRAR does not propagate MOTW.
+The option is supported only by WinRAR GUI. WinRAR CLI does not propagate MOTW regardless of the option.
+
+![images/winrar-setting.png](images/winrar-setting.png)
+
+The default is "For executable and office files" and WinRAR propagates MOTW to files with the following file extensions:
+- .exe .bat .cmd .hta .lnk .msi .pif .ps1 .scr .vbs
+- .doc .docb .docm .docx .dot .dotm .dotx .wbk
+- .ppa .ppam .pot .potm .potx .pps .ppsm .ppsx .ppt .pptm .pptx .sldm .sldx
+- .xls .xlsb .xlsm .xlsx .xlm .xlt .xltm .xltx
+
+When you set the option to "For office files", WinRAR propagates MOTW to files with the following file extensions:
+- .doc .docb .docm .docx .dot .dotm .dotx .wbk
+- .ppa .ppam .pot .potm .potx .pps .ppsm .ppsx .ppt .pptm .pptx .sldm .sldx
+- .xls .xlsb .xlsm .xlsx .xlm .xlt .xltm .xltx
+
+You can specify file extensions when you set the option to "For user defined types".
 
 ## Comparison table of MOTW propagation behavior (as of 12 August 2024)
 |Name|Tested version|MOTW propagation behavior|

@@ -89,7 +89,7 @@ MOTW の伝播はレジストリの HKEY_CURRENT_USER\SOFTWARE\7-Zip\Options\Wri
 - .pot .potm .potx .ppa .ppam .pps .ppsm .ppsx .ppt .pptm .pptx .sldm .sldx
 - .xla .xlam .xlm .xls .xlsb .xlsm .xlsx .xlt .xltm .xltx
 
-<a id="*7">*7</a>: WinRAR 7.0で"Propagate Mark of the Web"のオプションが導入されました。以下の値から選択できます:
+<a id="*7">*7</a>: WinRAR 7.0で"Mark of the Webを伝播"のオプションが導入されました。以下の値から選択できます:
 - 削除しない(「伝播しない」の誤り?、英語版では"Never")
 - Officeファイル用
 - 実行ファイルとOfficeファイル用

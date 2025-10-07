@@ -128,7 +128,7 @@ You can specify file extensions when you set the option to "For user defined typ
 |[PeaZip](https://peazip.github.io/)|10.6.1|<ul><li>MOTW of the archive file is propagated without modification</li></ul>|
 |[TC4Shell](https://www.tc4shell.com/)|21.3.0 (trial)|<ul><li>Only ZoneId field of the archive file is inherited and all other fields are ignored</li></ul>|
 |[Total Commander](https://www.ghisler.com/)|11.56 (trial)|<ul><li>MOTW of the archive file is propagated except for the ReferrerUrl field</li></ul>|
-|[WinRAR](https://www.win-rar.com/)|7.13 (trial)|<ul><li>Only ZoneId field of the archive file is inherited and all other fields are ignored</li><li>Only for specific file extensions <a href="#*7">*7</a></li></ul>|
+|[WinRAR](https://www.win-rar.com/)|7.13 (trial)|<ul><li>Only ZoneId field of the archive file is inherited and all other fields are ignored</li><li>Only for specific file extensions <a href="#*4">*4</a></li></ul>|
 |[WinZip](https://www.winzip.com/)|77.0 (trial)|<ul><li>MOTW is propagated only if ZoneId value of the MOTW is 3 (Internet) or 4 (Untrusted sites)</li><li>ZoneId field of the archive file is inherited</li><li>The absolute path of the archive file is set for the ReferrerUrl field</li><li>All other fields are ignored</li><li>Extraction of .exe .lnk .vbs files is blocked when the ZoneId value is 4 (Untrusted sites)</li></ul>|
 
 ### MOTW propagation examples
@@ -199,3 +199,4 @@ https://attack.mitre.org/techniques/T1553/005/
 
 ## Author
 Nobutaka Mantani ([@nmantani](https://twitter.com/nmantani))
+

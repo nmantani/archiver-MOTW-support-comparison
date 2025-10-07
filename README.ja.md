@@ -128,7 +128,7 @@ NanaZipはレジストリで[システム全体のポリシー設定](https://gi
 |[PeaZip](https://peazip.github.io/)|10.6.1|<ul><li>圧縮ファイルの MOTW はそのまま伝播されます。</li></ul>|
 |[TC4Shell](https://www.tc4shell.com/)|21.3.0 (試用版)|<ul><li>ZoneId のフィールドのみが引き継がれて他のフィールドは全て無視されます。</li></ul>|
 |[Total Commander](https://www.ghisler.com/)|11.56 (試用版)|<ul><li>ReferrerUrl のフィールドを除いて圧縮ファイルの MOTW はそのまま伝播されます。</li></ul>|
-|[WinRAR](https://www.win-rar.com/)|7.13 (試用版)|<ul><li>ZoneId のフィールドのみが引き継がれて他のフィールドは全て無視されます。</li><li>特定のファイル拡張子のファイルにのみ伝播されます。 <a href="#*7">*7</a></li></ul>|
+|[WinRAR](https://www.win-rar.com/)|7.13 (試用版)|<ul><li>ZoneId のフィールドのみが引き継がれて他のフィールドは全て無視されます。</li><li>特定のファイル拡張子のファイルにのみ伝播されます。 <a href="#*4">*4</a></li></ul>|
 |[WinZip](https://www.winzip.com/)|77.0 (試用版)|<ul><li>MOTW は ZoneId の値が 3 (インターネット) または 4 (信頼されていないサイト) の場合にのみ伝播されます。</li><li>圧縮ファイルの ZoneId のフィールドが引き継がれます。</li><li>圧縮ファイルの絶対パスが ReferrerUrl のフィールドに設定されます。</li><li>他のフィールドは全て無視されます。</li>><li>ZoneIdの値が4 (信頼されていないサイト)の場合に.exe .lnk .vbsファイルの展開はブロックされます。</li></ul>|
 
 ### MOTW 伝播の例
